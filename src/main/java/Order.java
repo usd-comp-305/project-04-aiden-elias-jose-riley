@@ -5,5 +5,7 @@ public class Order {
 
     public void addItem(MenuItem item){}
 
-    public double calculateTotal(){}
+    public double calculateTotal(){
+        return 0;
+    }
 }
