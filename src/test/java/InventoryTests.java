@@ -54,7 +54,6 @@ public class InventoryTests {
         List<Ingredient> ingredientsContained = new ArrayList<>();
         List<Ingredient> restockIngredients = new ArrayList<>();
 
-        Inventory inv = new Inventory(ingredientsContained, restockIngredients);
-
+        Assertions.assertDoesNotThrow(() -> {new Inventory(ingredientsContained, restockIngredients);});
     }
 }
