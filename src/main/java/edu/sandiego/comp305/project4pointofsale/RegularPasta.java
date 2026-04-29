@@ -1,5 +1,7 @@
-public class GlutenFreeBurger extends MenuItem {
-    public GlutenFreeBurger(){}
+package edu.sandiego.comp305.project4pointofsale;
+
+public class RegularPasta extends MenuItem {
+    public RegularPasta(){}
 
     @Override
     public String getDescription() {

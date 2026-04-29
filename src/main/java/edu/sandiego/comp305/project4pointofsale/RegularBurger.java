@@ -1,5 +1,7 @@
-public class VeganSteak extends MenuItem {
-    public VeganSteak(){}
+package edu.sandiego.comp305.project4pointofsale;
+
+public class RegularBurger extends MenuItem {
+    public RegularBurger(){}
 
     @Override
     public String getDescription() {

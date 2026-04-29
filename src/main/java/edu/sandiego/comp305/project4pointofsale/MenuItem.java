@@ -1,3 +1,5 @@
+package edu.sandiego.comp305.project4pointofsale;
+
 import java.util.List;
 
 public abstract class MenuItem {
@@ -5,14 +7,11 @@ public abstract class MenuItem {
     List<Ingredient> ingredients;
     double cost;
 
-    public MenuItem(List<Ingredient> ingredients){
-        this.ingredients = ingredients;
-    }
 
     String getDescription(){
-        return description;
+        return "";
     }
     double getCost(){
-        return cost;
+        return 0.0;
     }
 }
