@@ -1,13 +1,24 @@
+import java.util.List;
+
 public class RegularPasta extends MenuItem {
-    public RegularPasta(){}
+    private final double cost = 15.99;
+
+    public RegularPasta(List<Ingredient> ingredients){
+        super(ingredients);
+    }
 
     @Override
     public String getDescription() {
-        return "";
+        return "Creamy Tuscan Garden Pasta\n" +
+                "A hearty bowl of penne tossed " +
+                "in a rich garlic parmesan cream sauce" +
+                " with sun-dried tomatoes, spinach, roasted mushrooms," +
+                " and fresh basil. Finished with cracked black pepper " +
+                "and a sprinkle of parmesan cheese.";
     }
 
     @Override
     public double getCost() {
-        return 0;
+        return cost;
     }
 }
