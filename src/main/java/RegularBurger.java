@@ -1,4 +1,4 @@
-public class RegularBurger implements MenuItem {
+public class RegularBurger extends MenuItem {
     public RegularBurger(){}
 
     @Override

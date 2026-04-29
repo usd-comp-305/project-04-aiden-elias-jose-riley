@@ -1,4 +1,4 @@
-public class GlutenFreeBurger implements MenuItem {
+public class GlutenFreeBurger extends MenuItem {
     public GlutenFreeBurger(){}
 
     @Override
