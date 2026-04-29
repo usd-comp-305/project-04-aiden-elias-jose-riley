@@ -1,4 +1,4 @@
-public class GlutenFreePasta implements MenuItem {
+public class GlutenFreePasta extends MenuItem {
     public GlutenFreePasta(){}
 
     @Override

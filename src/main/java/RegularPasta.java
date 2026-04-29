@@ -1,4 +1,4 @@
-public class RegularPasta implements MenuItem {
+public class RegularPasta extends MenuItem {
     public RegularPasta(){}
 
     @Override
