@@ -1,13 +1,20 @@
+import java.util.List;
+
 public class RegularBurger extends MenuItem {
-    public RegularBurger(){}
+    private final double cost = 12.99;
+
+    public RegularBurger(List<Ingredient> ingredients){
+        super(ingredients);
+    }
+
 
     @Override
     public String getDescription() {
-        return "";
+        return "Grass fed patty with cheese, lettuce, tomato, and onions";
     }
 
     @Override
     public double getCost() {
-        return 0;
+        return cost;
     }
 }
