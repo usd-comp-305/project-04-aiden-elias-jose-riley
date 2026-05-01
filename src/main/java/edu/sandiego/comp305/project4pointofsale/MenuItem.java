@@ -7,10 +7,14 @@ public abstract class MenuItem {
 
     String description;
 
+
     List<Ingredient> ingredients;
 
     double cost;
 
+    public List<Ingredient> getIngredients() {
+        return ingredients;
+    }
 
     String getDescription(){
         return "";
