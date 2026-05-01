@@ -24,15 +24,15 @@ public abstract class MenuItem {
         return cost;
     }
 
-    public void setCost(double cost) {
+    public void setCost(final double cost) {
         this.cost = cost;
     }
 
-    public void setIngredients(List<Ingredient> ingredients) {
+    public void setIngredients(final List<Ingredient> ingredients) {
         this.ingredients = ingredients;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(final String description) {
         this.description = description;
     }
 }
