@@ -6,7 +6,10 @@ public class Ingredient {
 
     private int quantity;
 
-    public Ingredient(){}
+    public Ingredient(){
+        name = "";
+        quantity = 0;
+    }
 
     public String getName() {
         return name;
