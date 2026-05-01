@@ -8,4 +8,10 @@ public class KitchenTicket {
 
     private Order ticketOrder;
 
+    private KitchenTicket(){
+        this.ticketId = 0;
+        this.status = null;
+        this.ticketOrder = null;
+    }
+
 }
