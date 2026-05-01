@@ -2,10 +2,12 @@ package edu.sandiego.comp305.project4pointofsale;
 
 public abstract class Staff {
 
-    private int id = 0;
+    private int id;
 
-    private String name = null;
+    private String name;
 
     public abstract boolean login();
 
+    public int getId() {return id;}
+    public String getName() {return name;}
 }
