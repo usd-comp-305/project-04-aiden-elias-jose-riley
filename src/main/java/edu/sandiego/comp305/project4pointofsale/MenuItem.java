@@ -13,14 +13,14 @@ public abstract class MenuItem {
     double cost;
 
     public List<Ingredient> getIngredients() {
-        return ingredients;
+        return null;
     }
 
     String getDescription(){
-        return "";
+        return description;
     }
 
     double getCost(){
-        return 0.0;
+        return cost;
     }
 }
