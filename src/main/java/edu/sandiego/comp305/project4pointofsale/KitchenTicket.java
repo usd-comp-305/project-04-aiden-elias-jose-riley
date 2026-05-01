@@ -14,4 +14,17 @@ public class KitchenTicket {
         this.ticketOrder = null;
     }
 
+    public int getTicketId() {
+        return ticketId;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public Order getTicketOrder() {
+        return ticketOrder;
+    }
+
+
 }
