@@ -1,9 +1,11 @@
 package edu.sandiego.comp305.project4pointofsale;
 
 public class Order {
-    private int orderId;
+    private final int orderId;
 
-    public Order(){}
+    public Order(int orderId){
+        this.orderId = orderId;
+    }
 
     public void addItem(MenuItem item){}
 
