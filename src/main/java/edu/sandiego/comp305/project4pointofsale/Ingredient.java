@@ -7,4 +7,11 @@ public class Ingredient {
     private int quantity;
 
     public Ingredient(){}
+
+    public String getName() {
+        return name;
+    }
+    public int getQuantity() {
+        return quantity;
+    }
 }
