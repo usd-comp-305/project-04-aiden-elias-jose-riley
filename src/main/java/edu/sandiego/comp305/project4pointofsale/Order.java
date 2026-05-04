@@ -7,6 +7,10 @@ public class Order {
         this.orderId = orderId;
     }
 
+    public Order(){
+        this.orderId = -1;
+    }
+
     public void addItem(final MenuItem item){}
 
     public double calculateTotal(){

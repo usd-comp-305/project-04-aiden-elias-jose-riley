@@ -10,8 +10,8 @@ public class KitchenTicket {
 
     private KitchenTicket(){
         this.ticketId = 0;
-        this.status = null;
-        this.ticketOrder = null;
+        this.status = Status.IN_PROCESS;
+        this.ticketOrder = new Order();
     }
 
     public int getTicketId() {
