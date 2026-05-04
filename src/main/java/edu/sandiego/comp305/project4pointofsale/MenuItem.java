@@ -26,16 +26,16 @@ public abstract class MenuItem {
         return cost;
     }
 
-    public void setCost(double cost) {
+    public void setCost(final double cost) {
         this.cost = cost;
     }
 
 
-    public void addIngredients(Ingredient ingredient){
+    public void addIngredients(final Ingredient ingredient){
         this.ingredients.add(ingredient);
     }
 
-    public void setDescription(String description) {
+    public void setDescription(final String description) {
         this.description = description;
     }
 }
