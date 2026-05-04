@@ -14,7 +14,7 @@ public abstract class MenuItem {
     double cost;
 
     public List<Ingredient> getIngredients() {
-        List<Ingredient> returnIngredients = new ArrayList<>(ingredients);
+        final List<Ingredient> returnIngredients = new ArrayList<>(ingredients);
         return returnIngredients;
     }
 
