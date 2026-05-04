@@ -11,6 +11,10 @@ public class Order {
         this.orderId = -1;
     }
 
+    public Order(final Order other){
+        this.orderId = other.orderId;
+    }
+
     public void addItem(final MenuItem item){}
 
     public double calculateTotal(){

@@ -8,7 +8,7 @@ public class KitchenTicket {
 
     private Order ticketOrder;
 
-    private KitchenTicket(){
+    public KitchenTicket(){
         this.ticketId = 0;
         this.status = Status.IN_PROCESS;
         this.ticketOrder = new Order();
@@ -23,8 +23,7 @@ public class KitchenTicket {
     }
 
     public Order getTicketOrder() {
-        Order ticket = ticketOrder;
-        return ticket;
+        return new Order(ticketOrder);
     }
 
 
