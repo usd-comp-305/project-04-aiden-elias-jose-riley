@@ -14,9 +14,6 @@ public abstract class Staff {
         this.password = password;
     }
 
-    public boolean login(final String inputtedPassword){
-        return this.password.equals(inputtedPassword);
-    }
 
     public int getId() {
         return id;
@@ -34,5 +31,4 @@ public abstract class Staff {
         this.name = name;
     }
 
-    public abstract boolean login();
 }

@@ -9,8 +9,4 @@ public class Server extends Staff{
 
     public void checkInventory(){}
 
-    @Override
-    public boolean login() {
-        return false;
-    }
 }

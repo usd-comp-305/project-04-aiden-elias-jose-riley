@@ -7,8 +7,4 @@ public class Chef extends Staff{
 
     public void sendOrder(){}
 
-    @Override
-    public boolean login() {
-        return false;
-    }
 }
