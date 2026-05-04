@@ -9,7 +9,7 @@ public abstract class MenuItem {
     String description;
 
 
-    List<Ingredient> ingredients;
+    List<Ingredient> ingredients = new ArrayList<>();
 
     double cost;
 
