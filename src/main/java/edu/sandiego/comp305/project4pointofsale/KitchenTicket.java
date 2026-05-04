@@ -23,7 +23,8 @@ public class KitchenTicket {
     }
 
     public Order getTicketOrder() {
-        return ticketOrder;
+        Order ticket = ticketOrder;
+        return ticket;
     }
 
 
