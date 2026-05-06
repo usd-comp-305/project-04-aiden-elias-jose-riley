@@ -9,6 +9,8 @@ public abstract class MenuItem {
         this.ingredients = ingredients;
     }
 
+    public MenuItem(){}
+
     String description;
 
     List<Ingredient> ingredients = new ArrayList<>();
