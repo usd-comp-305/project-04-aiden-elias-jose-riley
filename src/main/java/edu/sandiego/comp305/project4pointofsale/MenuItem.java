@@ -1,5 +1,6 @@
 package edu.sandiego.comp305.project4pointofsale;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class MenuItem {
@@ -10,11 +11,11 @@ public abstract class MenuItem {
 
     double cost;
 
-    public MenuItem(final List<Ingredient> ingredients){
-        this.ingredients = ingredients;
+    MenuItem(final List<Ingredient> ingredients){
+        this.ingredients = new ArrayList<>(ingredients);
     }
 
-    public MenuItem(){
+    MenuItem(){
         this.ingredients = null;
     }
 
