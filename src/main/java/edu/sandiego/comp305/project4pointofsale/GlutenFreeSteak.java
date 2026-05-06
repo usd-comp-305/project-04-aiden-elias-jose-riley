@@ -3,7 +3,7 @@ package edu.sandiego.comp305.project4pointofsale;
 import java.util.List;
 
 public class GlutenFreeSteak extends MenuItem {
-    public GlutenFreeSteak(List<Ingredient> ingredients){
+    public GlutenFreeSteak(final List<Ingredient> ingredients){
         super(ingredients);
     }
 

@@ -5,17 +5,17 @@ import java.util.List;
 
 public abstract class MenuItem {
 
-    public MenuItem(List<Ingredient> ingredients){
-        this.ingredients = ingredients;
-    }
-
-    public MenuItem(){}
-
     String description;
 
     List<Ingredient> ingredients = new ArrayList<>();
 
     double cost;
+
+    public MenuItem(final List<Ingredient> ingredients){
+        this.ingredients = ingredients;
+    }
+
+    public MenuItem(){}
 
     public List<Ingredient> getIngredients() {
         return new ArrayList<>(ingredients);

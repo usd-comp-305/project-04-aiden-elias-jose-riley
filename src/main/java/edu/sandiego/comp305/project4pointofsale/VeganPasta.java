@@ -3,7 +3,7 @@ package edu.sandiego.comp305.project4pointofsale;
 import java.util.List;
 
 public class VeganPasta extends MenuItem {
-    public VeganPasta(List<Ingredient> ingredients){
+    public VeganPasta(final List<Ingredient> ingredients){
         super(ingredients);
     }
 

@@ -1,8 +1,9 @@
 package edu.sandiego.comp305.project4pointofsale;
+
 import java.util.List;
 
 public class RegularPasta extends MenuItem {
-    public RegularPasta(List<Ingredient> ingredients){
+    public RegularPasta(final List<Ingredient> ingredients){
         super(ingredients);
         this.description = "Creamy Tuscan Garden Pasta\n" +
                 "A hearty bowl of penne tossed " +

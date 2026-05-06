@@ -1,9 +1,9 @@
 package edu.sandiego.comp305.project4pointofsale;
+
 import java.util.List;
 
-
 public class RegularSteak extends MenuItem {
-    public RegularSteak(List<Ingredient> ingredients){
+    public RegularSteak(final List<Ingredient> ingredients){
         super(ingredients);
         this.description = "Chargrilled Rosemary Steak\n" +
                 "A tender, flame-grilled steak " +
