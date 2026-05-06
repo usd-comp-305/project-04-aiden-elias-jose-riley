@@ -5,9 +5,11 @@ import java.util.List;
 
 public abstract class MenuItem {
 
+    public MenuItem(List<Ingredient> ingredients){
+        this.ingredients = ingredients;
+    }
 
     String description;
-
 
     List<Ingredient> ingredients = new ArrayList<>();
 
