@@ -20,7 +20,8 @@ public abstract class MenuItem {
     }
 
     public List<Ingredient> getIngredients() {
-        return ingredients;
+        assert ingredients != null;
+        return new ArrayList<>(ingredients);
     }
 
     public String getDescription(){
