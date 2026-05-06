@@ -17,11 +17,11 @@ public abstract class MenuItem {
         return new ArrayList<>(ingredients);
     }
 
-    String getDescription(){
+    public String getDescription(){
         return description;
     }
 
-    double getCost(){
+    public double getCost(){
         return cost;
     }
 
