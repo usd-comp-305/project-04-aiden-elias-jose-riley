@@ -3,7 +3,6 @@ import java.util.List;
 
 
 public class RegularSteak extends MenuItem {
-
     public RegularSteak(List<Ingredient> ingredients){
         super(ingredients);
         this.description = "Chargrilled Rosemary Steak\n" +
@@ -15,4 +14,6 @@ public class RegularSteak extends MenuItem {
                 "and creamy mashed potatoes.";
         this.cost = 35.99;
     }
+
+    public RegularSteak(){}
 }

@@ -3,10 +3,11 @@ import java.util.List;
 
 
 public class RegularBurger extends MenuItem {
-
     public RegularBurger(List<Ingredient> ingredients){
         super(ingredients);
         this.description = "Grass fed patty with cheese, lettuce, tomato, and onions";
         this.cost = 13.99;
     }
+
+    public RegularBurger(){}
 }
