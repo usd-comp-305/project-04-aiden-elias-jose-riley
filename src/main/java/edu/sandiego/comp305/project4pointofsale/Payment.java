@@ -10,7 +10,9 @@ public class Payment {
 
     private PaymentMethod paymentMethod;
 
-    public Payment(final int paymentId, final double amount, final PaymentMethod paymentMethod) {
+    public Payment(final int paymentId,
+                   final double amount,
+                   final PaymentMethod paymentMethod) {
         this.paymentId = paymentId;
         this.amount = amount;
         this.paymentMethod = paymentMethod;
