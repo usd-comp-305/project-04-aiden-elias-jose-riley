@@ -17,11 +17,27 @@ public class Payment {
         this.paymentStatus = PaymentStatus.PENDING;
     }
 
-    public boolean processPayment() {
+    public boolean processPayment(){
         return false;
     }
 
-    public boolean refundPayment() {
+    public boolean refundPayment(){
         return false;
+    }
+
+    public int getPaymentId(){
+        return paymentId;
+    }
+
+    public double getAmount(){
+        return amount;
+    }
+
+    public PaymentStatus getPaymentStatus(){
+        return paymentStatus;
+    }
+
+    public PaymentMethod getPaymentMethod(){
+        return paymentMethod;
     }
 }
