@@ -10,11 +10,11 @@ public class CreditCardPayment implements PaymentMethod {
     }
 
     @Override
-    public boolean pay(double amount) {
+    public boolean pay(double amount){
         return false;
     }
 
-    public boolean validateCard() {
+    public boolean validateCard(){
         return false;
     }
 }
