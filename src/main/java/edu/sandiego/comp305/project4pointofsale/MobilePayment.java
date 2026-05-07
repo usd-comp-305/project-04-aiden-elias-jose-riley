@@ -15,4 +15,8 @@ public class MobilePayment implements PaymentMethod {
     public boolean verifyAccount(){
         return false;
     }
+
+    public String getProvider(){
+        return provider;
+    }
 }

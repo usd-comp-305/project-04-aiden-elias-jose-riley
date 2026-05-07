@@ -16,4 +16,12 @@ public class Receipt {
 
     public void emailReceipt(){
     }
+
+    public int getReceiptId(){
+        return receiptId;
+    }
+
+    public String getDate(){
+        return date;
+    }
 }

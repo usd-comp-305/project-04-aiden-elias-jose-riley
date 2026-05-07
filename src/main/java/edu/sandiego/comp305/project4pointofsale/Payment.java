@@ -42,4 +42,8 @@ public class Payment {
     public PaymentMethod getPaymentMethod(){
         return paymentMethod;
     }
+
+    public void setPaymentStatus(final PaymentStatus paymentStatus){
+        this.paymentStatus = paymentStatus;
+    }
 }

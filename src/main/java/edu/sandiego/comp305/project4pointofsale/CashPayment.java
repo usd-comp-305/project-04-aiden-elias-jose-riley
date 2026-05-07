@@ -15,4 +15,8 @@ public class CashPayment implements PaymentMethod{
     public double calculateChange(){
         return 0.0;
     }
+
+    public double getCashReceived(){
+        return cashReceived;
+    }
 }

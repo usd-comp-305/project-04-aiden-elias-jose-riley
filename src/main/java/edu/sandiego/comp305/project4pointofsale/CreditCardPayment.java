@@ -20,4 +20,12 @@ public class CreditCardPayment implements PaymentMethod {
     public boolean validateCard(){
         return false;
     }
+
+    public String getCardNumber(){
+        return cardNumber;
+    }
+
+    public String getCardHolderName(){
+        return cardHolderName;
+    }
 }
