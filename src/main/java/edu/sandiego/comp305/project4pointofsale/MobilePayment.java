@@ -3,7 +3,7 @@ package edu.sandiego.comp305.project4pointofsale;
 public class MobilePayment implements PaymentMethod {
     private String provider;
 
-    public MobilePayment(String provider){
+    public MobilePayment(final String provider){
         this.provider = provider;
     }
 
