@@ -4,7 +4,8 @@ public class CreditCardPayment implements PaymentMethod {
     private String cardNumber;
     private String cardHolderName;
 
-    public CreditCardPayment(final String cardNumber, final String cardHolderName) {
+    public CreditCardPayment(final String cardNumber,
+                             final String cardHolderName) {
         this.cardNumber = cardNumber;
         this.cardHolderName = cardHolderName;
     }
