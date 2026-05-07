@@ -8,7 +8,7 @@ public class CashPayment implements PaymentMethod{
     }
 
     @Override
-    public boolean pay(double amount){
+    public boolean pay(final double amount){
         return false;
     }
 
