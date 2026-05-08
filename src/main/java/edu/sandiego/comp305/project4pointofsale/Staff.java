@@ -15,8 +15,8 @@ public abstract class Staff {
     }
 
 
-    public boolean login(String passowrd){
-        return this.password.equals(passowrd);
+    public boolean login(final String password){
+        return this.password.equals(password);
     }
 
     public int getId() {
