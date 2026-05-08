@@ -5,17 +5,10 @@ import java.util.List;
 public class VeganPasta extends MenuItem {
     public VeganPasta(final List<Ingredient> ingredients){
         super(ingredients);
+        this.description = "A creamy vegan pasta tossed with fresh " +
+                "vegetables, herbs, and a rich plant-based sauce.";
+        this.cost = 22.99;
     }
 
     public VeganPasta(){}
-
-    @Override
-    public String getDescription() {
-        return "";
-    }
-
-    @Override
-    public double getCost() {
-        return 0;
-    }
 }
