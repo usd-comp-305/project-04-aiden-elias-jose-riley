@@ -6,7 +6,18 @@ public abstract class Staff {
 
     private String name;
 
-    public abstract boolean login();
+    private final String password;
+
+    public Staff(final int id, final String name, final String password){
+        this.id = id;
+        this.name = name;
+        this.password = password;
+    }
+
+
+    public boolean login(final String password){
+        return this.password.equals(password);
+    }
 
     public int getId() {
         return id;
@@ -23,4 +34,5 @@ public abstract class Staff {
     public void setName(final String name) {
         this.name = name;
     }
+
 }
