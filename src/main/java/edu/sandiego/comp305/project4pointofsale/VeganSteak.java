@@ -5,8 +5,9 @@ import java.util.List;
 public class VeganSteak extends MenuItem {
     public VeganSteak(final List<Ingredient> ingredients){
         super(ingredients);
-        this.description = "A hearty plant-based steak, seared and seasoned, " +
-                "served with herbs and a savory vegan sauce.\n";
+        this.description = "A hearty plant-based steak, seared and" +
+                " seasoned, served with herbs and a savory " +
+                "vegan sauce.\n";
         this.cost = 49.99;
     }
 
