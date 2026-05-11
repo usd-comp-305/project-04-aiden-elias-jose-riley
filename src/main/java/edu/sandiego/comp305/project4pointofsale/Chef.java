@@ -5,6 +5,11 @@ public class Chef extends Staff{
         super(id, name, password);
     }
 
+    @Override
+    public StaffRole getRole() {
+        return StaffRole.CHEF;
+    }
+
     public void createOrder(){}
 
     public void sendOrder(){}
