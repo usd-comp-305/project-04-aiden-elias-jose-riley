@@ -13,12 +13,17 @@ public class CreditCardPayment implements PaymentMethod {
     }
 
     @Override
-    public boolean pay(final double amount){
-        return false;
+    public boolean pay(final double amount) {
+        return amount > 0 && validateCard();
     }
 
-    public boolean validateCard(){
-        return false;
+    public boolean validateCard() {
+        return cardNumber != null
+                && cardHolderName != null
+                && !cardNumber.isBlank()
+                && !cardHolderName.isBlank()
+                && cardNumber.length() == 16
+                && cardNumber.matches("\\d+");
     }
 
     public String getCardNumber(){
