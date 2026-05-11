@@ -1,0 +1,15 @@
+package edu.sandiego.comp305.project4pointofsale;
+
+import java.util.List;
+
+public class GlutenFreeBurger extends MenuItem {
+    public GlutenFreeBurger(final List<Ingredient> ingredients){
+        super(ingredients);
+        this.description = "A juicy gluten-free burger wrapped " +
+                "in crisp lettuce and topped with fresh veggies " +
+                "and savory sauce.";
+        this.cost = 13.99;
+    }
+
+    public GlutenFreeBurger(){}
+}
