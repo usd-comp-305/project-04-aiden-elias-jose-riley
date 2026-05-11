@@ -1,22 +1,31 @@
 package edu.sandiego.comp305.project4pointofsale;
 
-public class CashPayment implements PaymentMethod{
-    private double cashReceived;
+public class CashPayment implements PaymentMethod {
+    private final double cashReceived;
 
-    public CashPayment(final double cashReceived){
+    private double amountPaid;
+
+    public CashPayment(final double cashReceived) {
         this.cashReceived = cashReceived;
+        this.amountPaid = 0.0;
     }
 
     @Override
-    public boolean pay(final double amount){
+    public boolean pay(final double amount) {
+        if (cashReceived >= amount) {
+            amountPaid = amount;
+            Inventory.addIncome(amount);
+            return true;
+        }
+
         return false;
     }
 
-    public double calculateChange(){
-        return 0.0;
+    public double calculateChange() {
+        return cashReceived - amountPaid;
     }
 
-    public double getCashReceived(){
+    public double getCashReceived() {
         return cashReceived;
     }
 }
