@@ -19,12 +19,12 @@ class StaffTest {
     }
 
     @Test
-    void login() {
+    void correctPassowrd() {
         final Staff elias = Mockito.mock(Staff.class, Mockito.withSettings()
                 .useConstructor(42, "Alex", "password")
                 .defaultAnswer(Mockito.CALLS_REAL_METHODS));
 
-        assertTrue(elias.login("password"));
+        assertTrue(elias.correctPassowrd("password"));
     }
 
     @Test

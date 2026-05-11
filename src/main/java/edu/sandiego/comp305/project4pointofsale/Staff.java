@@ -2,9 +2,9 @@ package edu.sandiego.comp305.project4pointofsale;
 
 public abstract class Staff {
 
-    private int id;
+    private final int id;
 
-    private String name;
+    private final String name;
 
     private final String password;
 
@@ -15,9 +15,10 @@ public abstract class Staff {
     }
 
 
-    public boolean login(final String password){
+    public boolean correctPassowrd(final String password){
         return this.password.equals(password);
     }
+    
 
     public int getId() {
         return id;
@@ -26,13 +27,7 @@ public abstract class Staff {
     public String getName() {
         return name;
     }
-
-    public void setId(final int id) {
-        this.id = id;
-    }
-
-    public void setName(final String name) {
-        this.name = name;
-    }
+    
+    public abstract StaffRole getRole();
 
 }
