@@ -5,6 +5,11 @@ public class Server extends Staff{
         super(id, name, password);
     }
 
+    @Override
+    public StaffRole getRole() {
+        return StaffRole.SERVER;
+    }
+
     public void viewTickets(){}
 
     public void updateOrderStatus(){}
