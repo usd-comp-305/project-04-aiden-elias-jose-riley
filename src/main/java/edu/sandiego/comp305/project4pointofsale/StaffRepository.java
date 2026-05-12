@@ -31,7 +31,7 @@ public class StaffRepository {
     }
 
     public int getStaffCount(){
-        return 0;
+        return staffMembers.size();
     }
 
 
