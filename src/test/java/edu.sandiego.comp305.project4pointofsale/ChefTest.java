@@ -8,7 +8,7 @@ class ChefTest {
 
     @Test
     void getRole() {
-        Chef chef = new Chef(22, "Elias", "hello2");
+        final Chef chef = new Chef(22, "Elias", "hello2");
 
         assertEquals(StaffRole.CHEF, chef.getRole());
     }

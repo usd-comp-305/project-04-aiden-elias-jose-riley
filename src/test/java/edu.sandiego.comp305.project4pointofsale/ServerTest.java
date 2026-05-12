@@ -8,7 +8,7 @@ class ServerTest {
 
     @Test
     void getRole() {
-        Server server = new Server(22, "Elias", "hello");
+        final Server server = new Server(22, "Elias", "hello");
 
         assertEquals(StaffRole.SERVER, server.getRole());
     }

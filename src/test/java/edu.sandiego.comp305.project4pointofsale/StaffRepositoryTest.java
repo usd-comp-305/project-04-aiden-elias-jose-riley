@@ -8,7 +8,7 @@ class StaffRepositoryTest {
 
     @Test
     void loadDefaultStaff() {
-        StaffRepository repository = new StaffRepository();
+        final StaffRepository repository = new StaffRepository();
 
         assertEquals(4, repository.getStaffCount());
     }
@@ -16,8 +16,8 @@ class StaffRepositoryTest {
     @Test
     void findByPinServer() {
 
-        StaffRepository repository = new StaffRepository();
-        Staff staff = repository.findByPin("1234");
+        final StaffRepository repository = new StaffRepository();
+        final Staff staff = repository.findByPin("1234");
 
         assertInstanceOf(Server.class, staff);
         assertEquals(StaffRole.SERVER, staff.getRole());
@@ -26,8 +26,8 @@ class StaffRepositoryTest {
     @Test
     void findByPinChef() {
 
-        StaffRepository repository = new StaffRepository();
-        Staff staff = repository.findByPin("2345");
+        final StaffRepository repository = new StaffRepository();
+        final Staff staff = repository.findByPin("2345");
 
         assertInstanceOf(Chef.class, staff);
         assertEquals(StaffRole.CHEF, staff.getRole());

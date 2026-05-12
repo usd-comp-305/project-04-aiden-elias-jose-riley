@@ -8,20 +8,20 @@ class LoginServiceTest {
 
     @Test
     void loginServer() {
-        StaffRepository staffRepository = new StaffRepository();
-        LoginService loginService = new LoginService(staffRepository);
+        final StaffRepository staffRepository = new StaffRepository();
+        final LoginService loginService = new LoginService(staffRepository);
 
-        Staff server = loginService.login("1234");
+        final Staff server = loginService.login("1234");
 
         assertEquals(StaffRole.SERVER, server.getRole());
     }
 
     @Test
     void loginChef(){
-        StaffRepository staffRepository = new StaffRepository();
-        LoginService loginService = new LoginService(staffRepository);
+        final StaffRepository staffRepository = new StaffRepository();
+        final LoginService loginService = new LoginService(staffRepository);
 
-        Staff chef = loginService.login("2345");
+        final Staff chef = loginService.login("2345");
 
         assertEquals(StaffRole.CHEF, chef.getRole());
     }
