@@ -21,7 +21,7 @@ class LoginServiceTest {
         StaffRepository staffRepository = new StaffRepository();
         LoginService loginService = new LoginService(staffRepository);
 
-        Staff chef = loginService.login("4321");
+        Staff chef = loginService.login("2345");
 
         assertEquals(StaffRole.CHEF, chef.getRole());
     }
