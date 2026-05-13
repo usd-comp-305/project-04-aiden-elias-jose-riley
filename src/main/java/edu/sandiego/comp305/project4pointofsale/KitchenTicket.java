@@ -8,10 +8,10 @@ public class KitchenTicket {
 
     private Order ticketOrder;
 
-    public KitchenTicket(){
-        this.ticketId = 0;
-        this.status = Status.IN_PROCESS;
-        this.ticketOrder = new Order();
+    public KitchenTicket(final int ticketId, final Order order){
+        this.ticketId = ticketId;
+        this.status = Status.ORDERED;
+        this.ticketOrder = order;
     }
 
     public int getTicketId() {
@@ -23,7 +23,11 @@ public class KitchenTicket {
     }
 
     public Order getTicketOrder() {
-        return new Order(ticketOrder);
+        return ticketOrder;
+    }
+
+    public void setStatus(final Status status){
+        this.status = status;
     }
 
 
