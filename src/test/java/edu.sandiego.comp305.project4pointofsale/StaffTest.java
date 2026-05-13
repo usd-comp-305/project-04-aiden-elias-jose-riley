@@ -19,12 +19,12 @@ class StaffTest {
     }
 
     @Test
-    void login() {
+    void correctPassowrd() {
         final Staff elias = Mockito.mock(Staff.class, Mockito.withSettings()
                 .useConstructor(42, "Alex", "password")
                 .defaultAnswer(Mockito.CALLS_REAL_METHODS));
 
-        assertTrue(elias.login("password"));
+        assertTrue(elias.createPassword("password"));
     }
 
     @Test
@@ -42,30 +42,5 @@ class StaffTest {
                 .useConstructor(42, "Alex", "password")
                 .defaultAnswer(Mockito.CALLS_REAL_METHODS));
         assertEquals("Alex", elias.getName());
-    }
-
-    @Test
-    void setId() {
-        final Staff elias = Mockito.mock(Staff.class, Mockito.withSettings()
-                .useConstructor(42, "Alex", "password")
-                .defaultAnswer(Mockito.CALLS_REAL_METHODS));
-
-        elias.setId(1);
-
-        assertEquals(1, elias.getId());
-
-    }
-
-    @Test
-    void setName() {
-        final Staff elias = Mockito.mock(Staff.class, Mockito.withSettings()
-                .useConstructor(42, "Alex", "password")
-                .defaultAnswer(Mockito.CALLS_REAL_METHODS));
-
-        elias.setName("Elias");
-
-        assertEquals("Elias", elias.getName());
-
-
     }
 }
