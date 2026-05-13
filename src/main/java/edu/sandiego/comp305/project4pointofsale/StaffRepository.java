@@ -21,9 +21,9 @@ public class StaffRepository {
 
     }
 
-    public Staff findByPin(final String pin){
+    public Staff findByPassword(final String password){
         for (Staff staff : staffMembers){
-            if (staff.correctPassowrd(pin)){
+            if (staff.createPassword(password)){
                 return staff;
             }
         }

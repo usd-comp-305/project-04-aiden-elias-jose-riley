@@ -8,6 +8,6 @@ public class LoginService {
     }
 
     public Staff login(final String password){
-        return staffRepo.findByPin(password);
+        return staffRepo.findByPassword(password);
     }
 }

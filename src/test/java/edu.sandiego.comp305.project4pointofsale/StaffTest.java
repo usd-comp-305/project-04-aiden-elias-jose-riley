@@ -24,7 +24,7 @@ class StaffTest {
                 .useConstructor(42, "Alex", "password")
                 .defaultAnswer(Mockito.CALLS_REAL_METHODS));
 
-        assertTrue(elias.correctPassowrd("password"));
+        assertTrue(elias.createPassword("password"));
     }
 
     @Test

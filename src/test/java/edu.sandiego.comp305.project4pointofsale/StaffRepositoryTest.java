@@ -14,23 +14,31 @@ class StaffRepositoryTest {
     }
 
     @Test
-    void findByPinServer() {
+    void findByPasswordServer() {
 
         final StaffRepository repository = new StaffRepository();
-        final Staff staff = repository.findByPin("1234");
+        final Staff staff = repository.findByPassword("1234");
 
         assertInstanceOf(Server.class, staff);
         assertEquals(StaffRole.SERVER, staff.getRole());
     }
 
     @Test
-    void findByPinChef() {
+    void findByPasswordChef() {
 
         final StaffRepository repository = new StaffRepository();
-        final Staff staff = repository.findByPin("2345");
+        final Staff staff = repository.findByPassword("2345");
 
         assertInstanceOf(Chef.class, staff);
         assertEquals(StaffRole.CHEF, staff.getRole());
+    }
+
+    void findByPasswordNull() {
+
+        final StaffRepository repository = new StaffRepository();
+        final Staff staff = repository.findByPassword("4444");
+
+        assertNull(staff);
     }
 
 

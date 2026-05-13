@@ -15,7 +15,7 @@ public abstract class Staff {
     }
 
 
-    public boolean correctPassowrd(final String password){
+    public boolean createPassword(final String password){
         return this.password.equals(password);
     }
     
