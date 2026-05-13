@@ -9,13 +9,28 @@ public class Order {
     private final List<MenuItem> items;
 
 
-    public Order(final int orderId, Server server){
+    public Order(final int orderId, final Server server){
         this.orderId = orderId;
         this.server = server;
         this.items = new ArrayList<>();
     }
 
-    public void addItem(final MenuItem item){}
+    public int getOrderId(){
+        return orderId;
+    }
+
+    public Server getServer(){
+        return server;
+    }
+
+
+    public void addItem(final MenuItem item){
+
+    }
+
+    public List<MenuItem> getItems(){
+        return new ArrayList<>(items);
+    }
 
     public double calculateTotal(){
         return 0;
