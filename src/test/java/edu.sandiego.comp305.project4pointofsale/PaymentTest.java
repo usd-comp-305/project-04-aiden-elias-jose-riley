@@ -52,6 +52,28 @@ public class PaymentTest {
         assertEquals(PaymentStatus.DECLINED, payment.getPaymentStatus());
     }
 
+    @Test
+    public void refundPaymentRefundsApprovedPayment() {
+        final PaymentMethod method = new SuccessfulPaymentMethod();
+        final Payment payment = new Payment(1, 25.00, method);
+
+        payment.processPayment();
+        final boolean result = payment.refundPayment();
+
+        assertTrue(result);
+        assertEquals(PaymentStatus.REFUNDED, payment.getPaymentStatus());
+    }
+
+    @Test
+    public void refundPaymentFailsIfPaymentWasNotApproved() {
+        final PaymentMethod method = new FailedPaymentMethod();
+        final Payment payment = new Payment(1, 25.00, method);
+
+        final boolean result = payment.refundPayment();
+
+        assertFalse(result);
+        assertEquals(PaymentStatus.PENDING, payment.getPaymentStatus());
+    }
 
     private static class SuccessfulPaymentMethod implements PaymentMethod {
         @Override

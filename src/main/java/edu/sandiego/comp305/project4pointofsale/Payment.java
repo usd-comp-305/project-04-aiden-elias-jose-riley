@@ -20,10 +20,27 @@ public class Payment {
     }
 
     public boolean processPayment(){
+        if (amount <= 0 || paymentMethod == null) {
+            paymentStatus = PaymentStatus.DECLINED;
+            return false;
+        }
+
+        final boolean successful = paymentMethod.pay(amount);
+
+        if (successful) {
+            paymentStatus = PaymentStatus.APPROVED;
+            return true;
+        }
+
+        paymentStatus = PaymentStatus.DECLINED;
         return false;
     }
 
     public boolean refundPayment(){
+        if (paymentStatus == PaymentStatus.APPROVED) {
+            paymentStatus = PaymentStatus.REFUNDED;
+            return true;
+        }
         return false;
     }
 
