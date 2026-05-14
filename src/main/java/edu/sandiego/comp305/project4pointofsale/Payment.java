@@ -2,13 +2,13 @@ package edu.sandiego.comp305.project4pointofsale;
 
 public class Payment {
 
-    private int paymentId;
+    private final int paymentId;
 
-    private double amount;
+    private final double amount;
 
     private PaymentStatus paymentStatus;
 
-    private PaymentMethod paymentMethod;
+    private final PaymentMethod paymentMethod;
 
     public Payment(final int paymentId,
                    final double amount,
