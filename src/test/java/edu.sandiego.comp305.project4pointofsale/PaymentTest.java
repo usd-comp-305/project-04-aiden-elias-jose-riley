@@ -19,10 +19,51 @@ public class PaymentTest {
 
     }
 
+    @Test
+    public void processPaymentApprovesSuccessfulPayment() {
+        final PaymentMethod method = new SuccessfulPaymentMethod();
+        final Payment payment = new Payment(1, 25.00, method);
+
+        final boolean result = payment.processPayment();
+
+        assertTrue(result);
+        assertEquals(PaymentStatus.APPROVED, payment.getPaymentStatus());
+    }
+
+    @Test
+    public void processPaymentDeclinesFailedPayment() {
+        final PaymentMethod method = new FailedPaymentMethod();
+        final Payment payment = new Payment(1, 25.00, method);
+
+        final boolean result = payment.processPayment();
+
+        assertFalse(result);
+        assertEquals(PaymentStatus.DECLINED, payment.getPaymentStatus());
+    }
+
+    @Test
+    public void processPaymentDeclinesInvalidAmount() {
+        final PaymentMethod method = new SuccessfulPaymentMethod();
+        final Payment payment = new Payment(1, 0.00, method);
+
+        final boolean result = payment.processPayment();
+
+        assertFalse(result);
+        assertEquals(PaymentStatus.DECLINED, payment.getPaymentStatus());
+    }
+
+
     private static class SuccessfulPaymentMethod implements PaymentMethod {
         @Override
         public boolean pay(final double amount) {
             return true;
+        }
+    }
+
+    private static class FailedPaymentMethod implements PaymentMethod {
+        @Override
+        public boolean pay(final double amount) {
+            return false;
         }
     }
 }
