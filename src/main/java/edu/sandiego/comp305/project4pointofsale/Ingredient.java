@@ -19,7 +19,7 @@ public class Ingredient {
         return quantity;
     }
 
-    public void reduceQuantity(){
+    public void reduceQuantity(final int used){
 
     }
 
