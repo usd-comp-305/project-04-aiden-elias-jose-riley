@@ -1,9 +1,13 @@
 package edu.sandiego.comp305.project4pointofsale;
 
 public class Receipt {
+
     private final int receiptId;
+
     private final String date;
+
     private boolean printed;
+
     private boolean emailed;
 
     public Receipt(final int receiptId, final String date) {
