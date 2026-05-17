@@ -2,13 +2,13 @@ package edu.sandiego.comp305.project4pointofsale;
 
 public class Ingredient {
 
-    public String name;
+    public final String name;
 
     private int quantity;
 
-    public Ingredient(){
-        name = "";
-        quantity = 0;
+    public Ingredient(final String name, final int quantity){
+        this.name = name;
+        this.quantity = quantity;
     }
 
     public String getName() {
@@ -18,4 +18,6 @@ public class Ingredient {
     public int getQuantity() {
         return quantity;
     }
+
+
 }
