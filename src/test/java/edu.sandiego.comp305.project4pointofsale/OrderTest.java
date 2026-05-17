@@ -11,8 +11,8 @@ class OrderTest {
 
     @Test
     void getOrderInfoFromConstructor() {
-        Server server = new Server(2, "elias", "hello");
-        Order order = new Order(1, server);
+        final Server server = new Server(2, "elias", "hello");
+        final Order order = new Order(1, server);
 
         assertEquals(1, order.getOrderId());
         assertEquals(server, order.getServer());
@@ -20,8 +20,8 @@ class OrderTest {
 
     @Test
     void orderStartsEmpty() {
-        Server server = new Server(2, "elias", "hello");
-        Order order = new Order(1, server);
+        final Server server = new Server(2, "elias", "hello");
+        final Order order = new Order(1, server);
 
         assertTrue(order.getItems().isEmpty());
     }
@@ -29,9 +29,9 @@ class OrderTest {
 
     @Test
     void addItem() {
-        Server server = new Server(2, "elias", "hello");
-        Order order = new Order(1, server);
-        MenuItem menuItem = new VeganBurger();
+        final Server server = new Server(2, "elias", "hello");
+        final Order order = new Order(1, server);
+        final MenuItem menuItem = new VeganBurger();
 
         order.addItem(menuItem);
 
@@ -41,9 +41,9 @@ class OrderTest {
 
     @Test
     void getItems() {
-        Server server = new Server(2, "elias", "hello");
-        Order order = new Order(1, server);
-        MenuItem menuItem = new VeganBurger();
+        final Server server = new Server(2, "elias", "hello");
+        final Order order = new Order(1, server);
+        final MenuItem menuItem = new VeganBurger();
 
         order.addItem(menuItem);
 
@@ -52,11 +52,11 @@ class OrderTest {
 
     @Test
     void calculateTotal() {
-        Server server = new Server(2, "elias", "hello");
-        Order order = new Order(1, server);
-        List<Ingredient> ingredients = new ArrayList<>();
+        final Server server = new Server(2, "elias", "hello");
+        final Order order = new Order(1, server);
+        final List<Ingredient> ingredients = new ArrayList<>();
 
-        MenuItem menuItem = new VeganBurger(ingredients);
+        final MenuItem menuItem = new VeganBurger(ingredients);
 
         order.addItem(menuItem);
 

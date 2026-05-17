@@ -5,15 +5,23 @@ import java.util.List;
 
 public class Order {
     private final int orderId;
+
     private final Server server;
+
     private final List<MenuItem> items;
 
+    public Order(final Order order) {
+        this.orderId = order.orderId;
+        this.server = order.server;
+        this.items = new ArrayList<>(order.items);
+    }
 
     public Order(final int orderId, final Server server){
         this.orderId = orderId;
         this.server = server;
         this.items = new ArrayList<>();
     }
+
 
     public int getOrderId(){
         return orderId;

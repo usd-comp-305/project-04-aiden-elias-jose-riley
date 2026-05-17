@@ -11,7 +11,7 @@ public class KitchenTicket {
     public KitchenTicket(final int ticketId, final Order order){
         this.ticketId = ticketId;
         this.status = Status.ORDERED;
-        this.ticketOrder = order;
+        this.ticketOrder = new Order(order);
     }
 
     public int getTicketId() {
@@ -23,7 +23,7 @@ public class KitchenTicket {
     }
 
     public Order getTicketOrder() {
-        return ticketOrder;
+        return new Order(this.ticketOrder);
     }
 
     public void setStatus(final Status status){

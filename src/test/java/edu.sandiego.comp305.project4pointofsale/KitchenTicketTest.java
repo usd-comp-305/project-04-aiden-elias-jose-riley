@@ -8,20 +8,21 @@ class KitchenTicketTest {
 
     @Test
     void testConstructor() {
-        Server server = new Server(1, "elias", "1234");
-        Order order = new Order(3, server);
-        KitchenTicket kitchenTicket = new KitchenTicket(22, order);
+        final Server server = new Server(1, "elias", "1234");
+        final Order order = new Order(3, server);
+        final KitchenTicket kitchenTicket = new KitchenTicket(22, order);
 
         assertEquals(22, kitchenTicket.getTicketId());
-        assertEquals(order, kitchenTicket.getTicketOrder());
+        assertEquals(order.getOrderId(), kitchenTicket.
+                getTicketOrder().getOrderId());
         assertEquals(Status.ORDERED, kitchenTicket.getStatus());
     }
 
     @Test
     void updateTicket() {
-        Server server = new Server(1, "elias", "1234");
-        Order order = new Order(3, server);
-        KitchenTicket kitchenTicket = new KitchenTicket(22, order);
+        final Server server = new Server(1, "elias", "1234");
+        final Order order = new Order(3, server);
+        final KitchenTicket kitchenTicket = new KitchenTicket(22, order);
 
         kitchenTicket.setStatus(Status.IN_PROCESS);
 
