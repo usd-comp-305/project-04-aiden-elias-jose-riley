@@ -7,7 +7,7 @@ public abstract class MenuItem {
 
     String description;
 
-    final List<Ingredient> ingredients;
+    List<Ingredient> ingredients;
 
     double cost;
 

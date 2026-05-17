@@ -6,9 +6,9 @@ public class Ingredient {
 
     private int quantity;
 
-    public Ingredient(){
-        name = "";
-        quantity = 0;
+    public Ingredient(String name){
+        this.name = name;
+        quantity = 100;
     }
 
     public String getName() {
