@@ -58,6 +58,8 @@ class OrderTest {
 
         MenuItem menuItem = new VeganBurger(ingredients);
 
+        order.addItem(menuItem);
+
         assertEquals(29.99, order.calculateTotal());
 
     }

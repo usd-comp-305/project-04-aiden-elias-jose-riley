@@ -25,7 +25,7 @@ public class Order {
 
 
     public void addItem(final MenuItem item){
-
+        items.add(item);
     }
 
     public List<MenuItem> getItems(){
@@ -33,6 +33,12 @@ public class Order {
     }
 
     public double calculateTotal(){
-        return 0;
+        double total = 0.0;
+
+        for (MenuItem item : items){
+            total += item.getCost();
+        }
+
+        return total;
     }
 }
