@@ -1,27 +1,39 @@
 package edu.sandiego.comp305.project4pointofsale;
 
 public class Receipt {
+    private final int receiptId;
+    private final String date;
+    private boolean printed;
+    private boolean emailed;
 
-    private int receiptId;
-
-    private String date;
-
-    public Receipt(final int receiptId, final String date){
+    public Receipt(final int receiptId, final String date) {
         this.receiptId = receiptId;
         this.date = date;
+        this.printed = false;
+        this.emailed = false;
     }
 
-    public void printReceipt(){
-    }
-
-    public void emailReceipt(){
-    }
-
-    public int getReceiptId(){
+    public int getReceiptId() {
         return receiptId;
     }
 
-    public String getDate(){
+    public String getDate() {
         return date;
+    }
+
+    public boolean isPrinted() {
+        return printed;
+    }
+
+    public boolean isEmailed() {
+        return emailed;
+    }
+
+    public void printReceipt() {
+        printed = true;
+    }
+
+    public void emailReceipt() {
+        emailed = true;
     }
 }
