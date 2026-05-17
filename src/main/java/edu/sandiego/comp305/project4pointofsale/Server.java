@@ -6,7 +6,7 @@ public class Server extends Staff{
     }
 
     @Override
-    public StaffRole getRole() {
+    public StaffRole getRole()   {
         return StaffRole.SERVER;
     }
 
