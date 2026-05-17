@@ -19,5 +19,9 @@ public class Ingredient {
         return quantity;
     }
 
+    public void reduceQuantity(){
+
+    }
+
 
 }
