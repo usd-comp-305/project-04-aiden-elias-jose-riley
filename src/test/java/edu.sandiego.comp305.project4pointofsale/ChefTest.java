@@ -19,9 +19,9 @@ class ChefTest {
 
         final Server server = new Server(1, "EliasServerVersion", "1234");
 
-        Order order = new Order(30, server);
+        final Order order = new Order(30, server);
 
-        KitchenTicket ticket = new KitchenTicket(501, order);
+        final KitchenTicket ticket = new KitchenTicket(501, order);
 
         chef.startTicket(ticket);
 
@@ -34,9 +34,9 @@ class ChefTest {
 
         final Server server = new Server(1, "EliasServerVersion", "1234");
 
-        Order order = new Order(30, server);
+        final Order order = new Order(30, server);
 
-        KitchenTicket ticket = new KitchenTicket(501, order);
+        final KitchenTicket ticket = new KitchenTicket(501, order);
 
         chef.markTicketReady(ticket);
 
@@ -49,9 +49,9 @@ class ChefTest {
 
         final Server server = new Server(1, "EliasServerVersion", "1234");
 
-        Order order = new Order(30, server);
+        final Order order = new Order(30, server);
 
-        KitchenTicket ticket = new KitchenTicket(501, order);
+        final KitchenTicket ticket = new KitchenTicket(501, order);
 
         chef.markTicketDelivered(ticket);
 
