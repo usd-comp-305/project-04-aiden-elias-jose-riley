@@ -61,63 +61,78 @@ public class Inventory {
     public void updateStock(){}
 
     public static Ingredient getSteak(){
-        return new Ingredient(steak.getName(),steak.getPrice());
+        return new Ingredient(
+                steak.getName(),steak.getPrice());
     }
 
     public static Ingredient getPasta() {
-        return new Ingredient(pasta.getName(),pasta.getPrice());
+        return new Ingredient(
+                pasta.getName(),pasta.getPrice());
     }
 
     public static Ingredient getPatty() {
-        return new Ingredient(patty.getName(),patty.getPrice());
+        return new Ingredient(
+                patty.getName(),patty.getPrice());
     }
 
     public static Ingredient getCheese() {
-        return new Ingredient(cheese.getName(),cheese.getPrice());
+        return new Ingredient(
+                cheese.getName(),cheese.getPrice());
     }
 
     public static Ingredient getLettuce() {
-        return new Ingredient(lettuce.getName(),lettuce.getPrice());
+        return new Ingredient(
+                lettuce.getName(),lettuce.getPrice());
     }
 
     public static Ingredient getTomato() {
-        return new Ingredient(tomato.getName(),tomato.getPrice());
+        return new Ingredient(
+                tomato.getName(),tomato.getPrice());
     }
 
     public static Ingredient getOnion() {
-        return new Ingredient(onion.getName(),onion.getPrice());
+        return new Ingredient(
+                onion.getName(),onion.getPrice());
     }
 
     public static Ingredient getBun() {
-        return new Ingredient(bun.getName(),bun.getPrice());
+        return new Ingredient(
+                bun.getName(),bun.getPrice());
     }
 
     public static Ingredient getVeganSteak() {
-        return new Ingredient(veganSteak.getName(),veganSteak.getPrice());
+        return new Ingredient(
+                veganSteak.getName(),veganSteak.getPrice());
     }
 
     public static Ingredient getVeganPasta() {
-        return new Ingredient(veganPasta.getName(),veganPasta.getPrice());
+        return new Ingredient(
+                veganPasta.getName(),veganPasta.getPrice());
     }
 
     public static Ingredient getGlutenFreePasta() {
-        return new Ingredient(glutenFreePasta.getName(),glutenFreePasta.getPrice());
+        return new Ingredient(
+                glutenFreePasta.getName(),glutenFreePasta.getPrice());
     }
 
     public static Ingredient getGlutenFreeSteak() {
-        return new Ingredient(glutenFreeSteak.getName(),glutenFreeSteak.getPrice());
+        return new Ingredient(
+                glutenFreeSteak.getName(),glutenFreeSteak.getPrice());
     }
 
     public static Ingredient getVeganPatty() {
-        return new Ingredient(veganPatty.getName(),veganPatty.getPrice());
+        return new Ingredient(
+                veganPatty.getName(),veganPatty.getPrice());
     }
 
     public static Ingredient getGlutenFreePatty() {
-        return new Ingredient(glutenFreePatty.getName(),glutenFreePatty.getPrice());
+        return new Ingredient(
+                glutenFreePatty.getName(),glutenFreePatty.getPrice());
     }
 
     public static Ingredient getPastaSauce() {
-        return new Ingredient(pastaSauce.getName(),pastaSauce.getPrice());
+        return new Ingredient(
+                pastaSauce.getName(),pastaSauce.getPrice());
     }
 
 }
