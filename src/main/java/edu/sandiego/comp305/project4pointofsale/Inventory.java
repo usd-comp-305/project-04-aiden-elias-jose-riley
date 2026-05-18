@@ -2,43 +2,43 @@ package edu.sandiego.comp305.project4pointofsale;
 
 
 public class Inventory {
-    private static Ingredient steak = new Ingredient("steak",100);
+    private static final Ingredient steak = new Ingredient("steak",100);
 
-    private static Ingredient veganSteak = new Ingredient(
+    private static final Ingredient veganSteak = new Ingredient(
             "veganSteak", 100);
 
-    private static Ingredient glutenFreeSteak = new Ingredient(
+    private static final Ingredient glutenFreeSteak = new Ingredient(
             "glutenFreeSteak", 100);
 
-    private static Ingredient pasta = new Ingredient("pasta", 100);
+    private static final Ingredient pasta = new Ingredient("pasta", 100);
 
-    private static Ingredient veganPasta = new Ingredient(
+    private static final Ingredient veganPasta = new Ingredient(
             "veganPasta", 100);
 
-    private static Ingredient glutenFreePasta = new Ingredient(
+    private static final Ingredient glutenFreePasta = new Ingredient(
             "glutenFreePasta", 100);
 
-    private static Ingredient patty = new Ingredient(
+    private static final Ingredient patty = new Ingredient(
             "patty", 100);
 
-    private static Ingredient veganPatty = new Ingredient(
+    private static final Ingredient veganPatty = new Ingredient(
             "veganPatty", 100);
 
-    private static Ingredient glutenFreePatty = new Ingredient(
+    private static final Ingredient glutenFreePatty = new Ingredient(
             "glutenFreePatty", 100);
 
-    private static Ingredient cheese = new Ingredient(
+    private static final Ingredient cheese = new Ingredient(
             "cheese", 100);
 
-    private static Ingredient lettuce = new Ingredient("lettuce", 100);
+    private static final Ingredient lettuce = new Ingredient("lettuce", 100);
 
-    private static Ingredient tomato = new Ingredient("tomato", 100);
+    private static final Ingredient tomato = new Ingredient("tomato", 100);
 
-    private static Ingredient onion = new Ingredient("onion", 100);
+    private static final Ingredient onion = new Ingredient("onion", 100);
 
-    private static Ingredient bun = new Ingredient("bun", 100);
+    private static final Ingredient bun = new Ingredient("bun", 100);
 
-    private static Ingredient pastaSauce = new Ingredient(
+    private static final Ingredient pastaSauce = new Ingredient(
             "pastaSauce", 100);
 
     private static double income = 0.0;
