@@ -33,6 +33,7 @@ class StaffRepositoryTest {
         assertEquals(StaffRole.CHEF, staff.getRole());
     }
 
+    @Test
     void findByPasswordNull() {
 
         final StaffRepository repository = new StaffRepository();
