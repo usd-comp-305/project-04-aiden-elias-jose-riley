@@ -24,7 +24,8 @@ public class POSSystem {
     }
 
     public Order createOrder(final Server loggedServer){
-        return null;
+        nextOrderId++;
+        return new Order(nextOrderId, loggedServer);
     }
 
     public void placeOrder(final Order order){
