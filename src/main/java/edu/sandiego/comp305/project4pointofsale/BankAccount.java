@@ -6,20 +6,28 @@ import java.util.Map;
 public class BankAccount {
     private static final double STANDARD_STARTING_BALANCE
             = 5000.00;
+
     private static final double[] BASE_EMPLOYEE_SALARIES_FOR_DAY
             = {120.00,200.00};
+
     private static final int STANDARD_RESTOCK_QUANTITY
             = 100;
 
+
     private static double accountBalance
             = STANDARD_STARTING_BALANCE;
+
     private static double restockCost
-            = STANDARD_RESTOCK_QUANTITY * IngredientRepository.sumCostOfEachItem();
+            = STANDARD_RESTOCK_QUANTITY
+              * IngredientRepository.sumCostOfEachItem();
+
 
     private static final Map<StaffRole,Double> employeeDailySalaries
             = new HashMap<>();
+
     private static final StaffRepository staffRepository
             = new StaffRepository();
+
 
     private BankAccount() {
 
@@ -28,10 +36,9 @@ public class BankAccount {
     public static void initializeEmployeeSalaries() {
         for (int i = 0;
              i < BASE_EMPLOYEE_SALARIES_FOR_DAY.length
-             && i < StaffRole.values().length; i++) {
-
-                employeeDailySalaries.put(StaffRole.values()[i],
-                            BASE_EMPLOYEE_SALARIES_FOR_DAY[i]);
+                     && i < StaffRole.values().length; i++) {
+            employeeDailySalaries.put(StaffRole.values()[i],
+                    BASE_EMPLOYEE_SALARIES_FOR_DAY[i]);
         }
     }
 
@@ -45,7 +52,7 @@ public class BankAccount {
     }
 
     public static boolean payEmployeeesDailyWages() {
-        double payment = calculateDailyEmployeeWages();
+        final double payment = calculateDailyEmployeeWages();
 
         if (payment > accountBalance) {
             return false;
@@ -56,11 +63,12 @@ public class BankAccount {
     }
 
     private static double calculateDailyEmployeeWages() {
-        int[] staffRolesCounts = staffRepository.getRoleCounts();
+        final int[] staffRolesCounts = staffRepository.getRoleCounts();
         double wageSum = 0.0;
 
         for( int i = 0; i < staffRolesCounts.length; i++ ) {
-            wageSum += staffRolesCounts[i] * employeeDailySalaries.get(StaffRole.values()[i]);
+            wageSum += staffRolesCounts[i]
+                    * employeeDailySalaries.get(StaffRole.values()[i]);
         }
 
         return wageSum;
