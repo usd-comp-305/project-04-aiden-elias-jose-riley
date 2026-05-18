@@ -15,6 +15,9 @@ public class RegularBurger extends MenuItem {
         this.description = "Grass fed patty with cheese, " +
                 "lettuce, tomato, and onions";
         this.cost = 13.99;
-        this.ingredients = new ArrayList<>(List.of(Inventory.getPatty(), Inventory.getCheese()));
+        this.ingredients = new ArrayList<>(List.of(Inventory.getBun(), Inventory.getPatty(),
+                Inventory.getCheese(), Inventory.getLettuce(), Inventory.getOnion(),
+                Inventory.getCheese(), Inventory.getLettuce(), Inventory.getOnion(),
+                Inventory.getTomato()));
     }
 }

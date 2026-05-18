@@ -6,9 +6,9 @@ public class Ingredient {
 
     private int quantity;
 
-    public Ingredient(String name){
+    public Ingredient(final String name, final int quantity){
         this.name = name;
-        quantity = 100;
+        this.quantity = quantity;
     }
 
     public String getName() {
@@ -17,5 +17,13 @@ public class Ingredient {
 
     public int getQuantity() {
         return quantity;
+    }
+
+    public void reduceQuantity(final int used){
+        if (used > quantity){
+            this.quantity = 0;
+        } else {
+            quantity -= used;
+        }
     }
 }

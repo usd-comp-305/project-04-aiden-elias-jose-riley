@@ -1,13 +1,21 @@
 package edu.sandiego.comp305.project4pointofsale;
 
 public class Inventory {
-    private static Ingredient steak = new Ingredient("steak");
-    private static Ingredient pasta = new Ingredient("pasta");
-    private static Ingredient patty = new Ingredient("patty");
-    private static Ingredient cheese = new Ingredient("cheese");
-    private static Ingredient lettuce = new Ingredient("lettuce");
-    private static Ingredient tomato = new Ingredient("tomato");
-    private static Ingredient onion = new Ingredient("onion");
+    private static Ingredient steak = new Ingredient("steak",100);
+    private static Ingredient veganSteak = new Ingredient("veganSteak", 100);
+    private static Ingredient glutenFreeSteak = new Ingredient("glutenFreeSteak", 100);
+    private static Ingredient pasta = new Ingredient("pasta", 100);
+    private static Ingredient veganPasta = new Ingredient("veganPasta", 100);
+    private static Ingredient glutenFreePasta = new Ingredient("glutenFreePasta", 100);
+    private static Ingredient patty = new Ingredient("patty", 100);
+    private static Ingredient veganPatty = new Ingredient("veganPatty", 100);
+    private static Ingredient glutenFreePatty = new Ingredient("glutenFreePatty", 100);
+    private static Ingredient cheese = new Ingredient("cheese", 100);
+    private static Ingredient lettuce = new Ingredient("lettuce", 100);
+    private static Ingredient tomato = new Ingredient("tomato", 100);
+    private static Ingredient onion = new Ingredient("onion", 100);
+    private static Ingredient bun = new Ingredient("bun", 100);
+    private static Ingredient pastaSauce = new Ingredient("pastaSauce", 100);
 
     private static double income = 0.0;
 
@@ -55,4 +63,37 @@ public class Inventory {
     public static Ingredient getOnion() {
         return onion;
     }
+
+    public static Ingredient getBun() {
+        return bun;
+    }
+
+    public static Ingredient getVeganSteak() {
+        return veganSteak;
+    }
+
+    public static Ingredient getVeganPasta() {
+        return veganPasta;
+    }
+
+    public static Ingredient getGlutenFreePasta() {
+        return glutenFreePasta;
+    }
+
+    public static Ingredient getGlutenFreeSteak() {
+        return glutenFreeSteak;
+    }
+
+    public static Ingredient getVeganPatty() {
+        return veganPatty;
+    }
+
+    public static Ingredient getGlutenFreePatty() {
+        return glutenFreePatty;
+    }
+
+    public static Ingredient getPastaSauce() {
+        return pastaSauce;
+    }
+
 }
