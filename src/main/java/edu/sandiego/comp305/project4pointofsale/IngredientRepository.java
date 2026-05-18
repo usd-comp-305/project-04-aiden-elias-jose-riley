@@ -92,6 +92,8 @@ public class IngredientRepository {
     }
 
     public static double sumCostOfEachItem() {
+        instantiateRepository();
+
         double sum = 0.0;
 
         for (final Ingredient i : possibleIngredients) {
