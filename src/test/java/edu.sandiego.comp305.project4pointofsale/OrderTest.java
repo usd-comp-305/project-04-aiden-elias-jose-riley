@@ -15,7 +15,7 @@ class OrderTest {
         final Order order = new Order(1, server);
 
         assertEquals(1, order.getOrderId());
-        assertEquals(server, order.getServer());
+        assertEquals(server.getId(), order.getServerId());
     }
 
     @Test

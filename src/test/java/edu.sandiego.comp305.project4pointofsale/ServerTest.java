@@ -24,9 +24,9 @@ class ServerTest {
         final POSSystem pos = new POSSystem();
         final Server server = new Server(22, "Elias", "hello");
 
-        Order order = server.createOrder(pos);
+        final Order order = server.createOrder(pos);
 
-        assertEquals(server, order.getServer());
+        assertEquals(server.getId(), order.getServerId());
     }
 
     @Test
@@ -34,7 +34,7 @@ class ServerTest {
         final POSSystem pos = new POSSystem();
         final Server server = new Server(22, "Elias", "hello");
 
-        Order order = server.createOrder(pos);
+        final Order order = server.createOrder(pos);
         server.addItemToOrder(order, new VeganBurger());
 
         assertEquals(1, order.getItems().size());
@@ -45,7 +45,7 @@ class ServerTest {
         final POSSystem pos = new POSSystem();
         final Server server = new Server(22, "Elias", "hello");
 
-        Order order = server.createOrder(pos);
+        final Order order = server.createOrder(pos);
         server.addItemToOrder(order, new VeganBurger());
         server.submitOrder(pos, order);
 
@@ -57,7 +57,7 @@ class ServerTest {
         final POSSystem pos = new POSSystem();
         final Server server = new Server(22, "Elias", "hello");
 
-        Order order = server.createOrder(pos);
+        final Order order = server.createOrder(pos);
         server.addItemToOrder(order, new VeganBurger());
 
         assertEquals(29.99, server.calculateOrderTotal(order));
