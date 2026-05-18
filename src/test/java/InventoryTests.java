@@ -1,3 +1,4 @@
+import edu.sandiego.comp305.project4pointofsale.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
