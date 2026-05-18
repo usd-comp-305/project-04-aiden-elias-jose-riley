@@ -25,6 +25,7 @@ public class RegularSteak extends MenuItem {
                 "finished with a side of roasted vegetables " +
                 "and creamy mashed potatoes.";
         this.cost = 35.99;
-        this.ingredients = new ArrayList<>(List.of(Inventory.getSteak()));
+        this.ingredients = new ArrayList<>(List.of(
+                IngredientRepository.getIngredient("steak")));
     }
 }

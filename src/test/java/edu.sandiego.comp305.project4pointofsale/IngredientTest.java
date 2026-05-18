@@ -8,34 +8,45 @@ class IngredientTest {
 
     @Test
     void getName() {
-        final Ingredient ingredient = new Ingredient("vegetable", 4);
+        final Ingredient ingredient = new Ingredient("vegetable", 0.5);
 
         assertEquals("vegetable", ingredient.getName());
     }
 
     @Test
-    void getQuantity() {
-        final Ingredient ingredient = new Ingredient("vegetable", 4);
+    void getPrice() {
+        final Ingredient ingredient = new Ingredient("vegetable", 0.5);
 
-        assertEquals(4, ingredient.getQuantity());
+        assertEquals(0.5, ingredient.getPrice());
     }
 
     @Test
-    void reduceQuantity() {
-        final Ingredient ingredient = new Ingredient("vegetable", 4);
+    void setNormalPrice() {
+        final Ingredient ingredient = new Ingredient("vegetable", 0.5);
 
-        ingredient.reduceQuantity(1);
+        ingredient.setPrice(0.75);
 
-        assertEquals(3, ingredient.getQuantity());
+        assertEquals(0.75, ingredient.getPrice());
     }
 
     @Test
-    void reduceQuantityNeverBelow0() {
-        final Ingredient ingredient = new Ingredient("vegetable", 4);
+    void setNegativePrice() {
+        final Ingredient ingredient = new Ingredient("vegetable", 0.5);
 
-        ingredient.reduceQuantity(5);
-
-        assertEquals(0, ingredient.getQuantity());
+        assertThrows(IllegalArgumentException.class, () -> {
+            ingredient.setPrice(-1);
+        });
 
     }
+
+    @Test
+    void setZeroPrice() {
+        final Ingredient ingredient = new Ingredient("vegetable", 0.5);
+
+        ingredient.setPrice(0);
+
+        assertEquals(0, ingredient.getPrice());
+
+    }
+
 }
