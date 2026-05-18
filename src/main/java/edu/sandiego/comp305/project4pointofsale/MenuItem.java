@@ -2,6 +2,7 @@ package edu.sandiego.comp305.project4pointofsale;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public abstract class MenuItem {
 
@@ -60,5 +61,10 @@ public abstract class MenuItem {
         return casted.ingredients.equals(this.ingredients)
                 && this.cost == casted.cost
                 && this.description.equals(casted.description);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(description, ingredients, cost);
     }
 }
