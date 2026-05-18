@@ -1,123 +1,48 @@
 package edu.sandiego.comp305.project4pointofsale;
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Inventory {
-    private static Ingredient steak = new Ingredient("steak",100);
+    private static final int
+            STANDARD_NUMBER_OF_STARTING_INGREDIENTS = 100;
 
-    private static Ingredient veganSteak = new Ingredient(
-            "veganSteak", 100);
+    private static Map<Ingredient, Integer> ingredientQuantities;
 
-    private static Ingredient glutenFreeSteak = new Ingredient(
-            "glutenFreeSteak", 100);
+    private Inventory() {
 
-    private static Ingredient pasta = new Ingredient("pasta", 100);
-
-    private static Ingredient veganPasta = new Ingredient(
-            "veganPasta", 100);
-
-    private static Ingredient glutenFreePasta = new Ingredient(
-            "glutenFreePasta", 100);
-
-    private static Ingredient patty = new Ingredient(
-            "patty", 100);
-
-    private static Ingredient veganPatty = new Ingredient(
-            "veganPatty", 100);
-
-    private static Ingredient glutenFreePatty = new Ingredient(
-            "glutenFreePatty", 100);
-
-    private static Ingredient cheese = new Ingredient(
-            "cheese", 100);
-
-    private static Ingredient lettuce = new Ingredient("lettuce", 100);
-
-    private static Ingredient tomato = new Ingredient("tomato", 100);
-
-    private static Ingredient onion = new Ingredient("onion", 100);
-
-    private static Ingredient bun = new Ingredient("bun", 100);
-
-    private static Ingredient pastaSauce = new Ingredient(
-            "pastaSauce", 100);
-
-    private static double income = 0.0;
-
-    public static void addIncome(final double amount){
-        income += amount;
     }
 
-    public static double getIncome(){
-        return income;
+    static {
+        ingredientQuantities = populateIngredients();
     }
 
-    //mainly for testing
-    public static void resetIncome(){
-        income = 0.0;
+    private static void populateIngredientsWithStandardAmount() {
+        final Map<Ingredient, Integer> newIQ = new HashMap<>();
+        for(Ingredient i : IngredientRepository.getIngredientOptions()) {
+            ingredientQuantities.put(i,STANDARD_NUMBER_OF_STARTING_INGREDIENTS);
+        }
+        ingredientQuantities = newIQ;
     }
 
-    public void checkStock(){}
-
-    public void updateStock(){}
-
-    public static Ingredient getSteak(){
-        return steak;
+    private static void restockIngredients(final int num) {
+        for(Ingredient i : IngredientRepository.getIngredientOptions()) {
+            ingredientQuantities.put(i,STANDARD_NUMBER_OF_STARTING_INGREDIENTS);
+        }
+        ingredientQuantities = newIQ;
     }
 
-    public static Ingredient getPasta() {
-        return pasta;
-    }
+    public boolean takeIngredient(final Ingredient ingredient, final int quantity) {
+        if(ingredientQuantities.containsKey(ingredient)) {
+            final int currentStock = ingredientQuantities.get(ingredient);
 
-    public static Ingredient getPatty() {
-        return patty;
-    }
+            if(currentStock >= quantity) {
+                ingredientQuantities.put(ingredient, currentStock - quantity);
+                return true;
+            }
+        }
 
-    public static Ingredient getCheese() {
-        return cheese;
+        return false;
     }
-
-    public static Ingredient getLettuce() {
-        return lettuce;
-    }
-
-    public static Ingredient getTomato() {
-        return tomato;
-    }
-
-    public static Ingredient getOnion() {
-        return onion;
-    }
-
-    public static Ingredient getBun() {
-        return bun;
-    }
-
-    public static Ingredient getVeganSteak() {
-        return veganSteak;
-    }
-
-    public static Ingredient getVeganPasta() {
-        return veganPasta;
-    }
-
-    public static Ingredient getGlutenFreePasta() {
-        return glutenFreePasta;
-    }
-
-    public static Ingredient getGlutenFreeSteak() {
-        return glutenFreeSteak;
-    }
-
-    public static Ingredient getVeganPatty() {
-        return veganPatty;
-    }
-
-    public static Ingredient getGlutenFreePatty() {
-        return glutenFreePatty;
-    }
-
-    public static Ingredient getPastaSauce() {
-        return pastaSauce;
-    }
-
 }
