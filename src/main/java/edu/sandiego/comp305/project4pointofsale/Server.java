@@ -11,19 +11,19 @@ public class Server extends Staff{
     }
 
     public Order createOrder(final POSSystem pos){
-        return null;
+        return pos.createOrder(this);
     }
 
     public void addItemToOrder(final Order order, final MenuItem item){
-
+        order.addItem(item);
     }
 
     public void submitOrder(final POSSystem pos, final Order order){
-
+        pos.placeOrder(order);
     }
 
     public double calculateOrderTotal(final Order order){
-        return 0.0;
+        return order.calculateTotal();
     }
 
 
