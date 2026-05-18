@@ -6,6 +6,9 @@ import java.util.List;
 public class IngredientRepository {
     private static List<Ingredient> possibleIngredients;
 
+    private IngredientRepository() {
+
+    }
 
     private static void instantiateRepository() {
         possibleIngredients = generateStandardIngredients();
@@ -71,7 +74,8 @@ public class IngredientRepository {
         return findIngredientByName(ingredientName);
     }
 
-    private static Ingredient findIngredientByName(final String ingredientName) {
+    private static Ingredient findIngredientByName(
+            final String ingredientName) {
         for (Ingredient i : possibleIngredients) {
             if (i.getName().equals(ingredientName)) {
                 return i;
