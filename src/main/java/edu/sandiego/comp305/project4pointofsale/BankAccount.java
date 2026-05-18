@@ -43,12 +43,14 @@ public class BankAccount {
     }
 
     public static void updateCostOfRestock() {
-        restockCost = STANDARD_RESTOCK_QUANTITY * IngredientRepository.sumCostOfEachItem();
+        restockCost = STANDARD_RESTOCK_QUANTITY
+                * IngredientRepository.sumCostOfEachItem();
     }
 
     public static void updateCostOfRestockWithCustomQuantity(
             final int numberOfEachIngredient) {
-        restockCost = numberOfEachIngredient * IngredientRepository.sumCostOfEachItem();
+        restockCost = numberOfEachIngredient
+                * IngredientRepository.sumCostOfEachItem();
     }
 
     public static boolean payEmployeeesDailyWages() {
