@@ -12,13 +12,17 @@ public class RegularBurger extends MenuItem {
     }
 
     public RegularBurger(){
+        IngredientRepository ir = new IngredientRepository();
+
         this.description = "Grass fed patty with cheese, " +
                 "lettuce, tomato, and onions";
         this.cost = 13.99;
-        this.ingredients = new ArrayList<>(List.of(Inventory.getBun(),
-                Inventory.getPatty(), Inventory.getCheese(),
-                Inventory.getLettuce(), Inventory.getOnion(),
-                Inventory.getCheese(), Inventory.getLettuce(),
-                Inventory.getOnion(), Inventory.getTomato()));
+        this.ingredients = new ArrayList<>(List.of(
+                ir.getIngredient("bun"),
+                ir.getIngredient("patty"),
+                ir.getIngredient("cheese"), ir.getIngredient("lettuce"),
+                ir.getIngredient("onion"), ir.getIngredient("cheese"),
+                ir.getIngredient("lettuce"), ir.getIngredient("onion"),
+                ir.getIngredient("tomato")));
     }
 }

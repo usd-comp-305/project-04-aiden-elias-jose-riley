@@ -13,15 +13,18 @@ public class GlutenFreeBurger extends MenuItem {
     }
 
     public GlutenFreeBurger(){
+        IngredientRepository ir = new IngredientRepository();
+
         this.description = "A juicy gluten-free burger wrapped " +
                 "in crisp lettuce and topped with fresh veggies " +
                 "and savory sauce.";
         this.cost = 13.99;
         this.ingredients = new ArrayList<>(List.of(
-                Inventory.getGlutenFreePatty(),
-                Inventory.getCheese(), Inventory.getLettuce(),
-                Inventory.getOnion(), Inventory.getCheese(),
-                Inventory.getLettuce(), Inventory.getOnion(),
-                Inventory.getTomato()));
+                ir.getIngredient("bun"),
+                ir.getIngredient("glutenFreePatty"),
+                ir.getIngredient("cheese"), ir.getIngredient("lettuce"),
+                ir.getIngredient("onion"), ir.getIngredient("cheese"),
+                ir.getIngredient("lettuce"), ir.getIngredient("onion"),
+                ir.getIngredient("tomato")));
     }
 }
