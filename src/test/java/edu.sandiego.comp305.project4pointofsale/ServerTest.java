@@ -1,7 +1,6 @@
 package edu.sandiego.comp305.project4pointofsale;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -25,19 +24,42 @@ class ServerTest {
         final POSSystem pos = new POSSystem();
         final Server server = new Server(22, "Elias", "hello");
 
-        final Order order = server.createOrder(pos);
+        Order order = server.createOrder(pos);
 
+        assertEquals(server, order.getServer());
     }
 
     @Test
     void addItemToOrder() {
+        final POSSystem pos = new POSSystem();
+        final Server server = new Server(22, "Elias", "hello");
+
+        Order order = server.createOrder(pos);
+        server.addItemToOrder(order, new VeganBurger());
+
+        assertEquals(1, order.getItems().size());
     }
 
     @Test
     void submitOrder() {
+        final POSSystem pos = new POSSystem();
+        final Server server = new Server(22, "Elias", "hello");
+
+        Order order = server.createOrder(pos);
+        server.addItemToOrder(order, new VeganBurger());
+        server.submitOrder(pos, order);
+
+        assertEquals(1, pos.getNumOrders());
     }
 
     @Test
     void calculateOrderTotal() {
+        final POSSystem pos = new POSSystem();
+        final Server server = new Server(22, "Elias", "hello");
+
+        Order order = server.createOrder(pos);
+        server.addItemToOrder(order, new VeganBurger());
+
+        assertEquals(29.99, server.calculateOrderTotal(order));
     }
 }
