@@ -13,13 +13,11 @@ public class GlutenFreeSteak extends MenuItem {
     }
 
     public GlutenFreeSteak(){
-        final IngredientRepository ir = new IngredientRepository();
-
         this.description = "A tender gluten-free steak, grilled" +
                 " to perfection and served with fresh " +
                 "herbs and savory sauce.\n";
         this.cost = 34.99;
         this.ingredients = new ArrayList<>(List.of(
-                ir.getIngredient("glutenFreeSteak")));
+                IngredientRepository.getIngredient("glutenFreeSteak")));
     }
 }

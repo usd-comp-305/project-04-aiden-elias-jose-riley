@@ -12,13 +12,11 @@ public class GlutenFreePasta extends MenuItem {
     }
 
     public GlutenFreePasta(){
-        final IngredientRepository ir = new IngredientRepository();
-
         this.description = "Tender gluten-free pasta tossed with " +
                 "fresh ingredients and a flavorful house sauce.\n";
         this.cost = 15.99;
         this.ingredients = new ArrayList<>(List.of(
-                ir.getIngredient("glutenFreePasta"),
-                ir.getIngredient("pastaSauce")));
+                IngredientRepository.getIngredient("glutenFreePasta"),
+                IngredientRepository.getIngredient("pastaSauce")));
     }
 }

@@ -13,19 +13,17 @@ public class VeganBurger extends MenuItem {
     }
 
     public VeganBurger(){
-        final IngredientRepository ir = new IngredientRepository();
-
         this.description = "A savory plant-based burger topped with " +
                 "fresh lettuce, tomato, pickles, and vegan sauce " +
                 "on a toasted bun.";
         this.cost = 29.99;
         this.ingredients = new ArrayList<>(List.of(
-                ir.getIngredient("bun"),
-                ir.getIngredient("veganPatty"),
-                ir.getIngredient("cheese"), ir.getIngredient("lettuce"),
-                ir.getIngredient("onion"), ir.getIngredient("cheese"),
-                ir.getIngredient("lettuce"), ir.getIngredient("onion"),
-                ir.getIngredient("tomato")
+                IngredientRepository.getIngredient("bun"),
+                IngredientRepository.getIngredient("veganPatty"),
+                IngredientRepository.getIngredient("cheese"), IngredientRepository.getIngredient("lettuce"),
+                IngredientRepository.getIngredient("onion"), IngredientRepository.getIngredient("cheese"),
+                IngredientRepository.getIngredient("lettuce"), IngredientRepository.getIngredient("onion"),
+                IngredientRepository.getIngredient("tomato")
         ));
     }
 }

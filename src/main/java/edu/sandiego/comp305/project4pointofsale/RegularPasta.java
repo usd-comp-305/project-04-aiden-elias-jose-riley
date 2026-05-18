@@ -16,8 +16,6 @@ public class RegularPasta extends MenuItem {
     }
 
     public RegularPasta(){
-        final IngredientRepository ir = new IngredientRepository();
-
         this.description = "Creamy Tuscan Garden Pasta\n" +
                 "A hearty bowl of penne tossed " +
                 "in a rich garlic parmesan cream sauce" +
@@ -26,7 +24,7 @@ public class RegularPasta extends MenuItem {
                 "and a sprinkle of parmesan cheese.";
         this.cost = 15.99;
         this.ingredients = new ArrayList<>(List.of(
-                ir.getIngredient("pasta"),
-                ir.getIngredient("pastaSauce")));
+                IngredientRepository.getIngredient("pasta"),
+                IngredientRepository.getIngredient("pastaSauce")));
     }
 }

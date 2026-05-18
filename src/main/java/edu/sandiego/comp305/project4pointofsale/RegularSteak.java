@@ -17,8 +17,6 @@ public class RegularSteak extends MenuItem {
     }
 
     public RegularSteak(){
-        final IngredientRepository ir = new IngredientRepository();
-
         this.description = "Chargrilled Rosemary Steak\n" +
                 "A tender, flame-grilled steak " +
                 "seasoned with cracked pepper, " +
@@ -28,6 +26,6 @@ public class RegularSteak extends MenuItem {
                 "and creamy mashed potatoes.";
         this.cost = 35.99;
         this.ingredients = new ArrayList<>(List.of(
-                ir.getIngredient("steak")));
+                IngredientRepository.getIngredient("steak")));
     }
 }

@@ -12,13 +12,11 @@ public class VeganPasta extends MenuItem {
     }
 
     public VeganPasta(){
-        final IngredientRepository ir = new IngredientRepository();
-
         this.description = "A creamy vegan pasta tossed with fresh " +
                 "vegetables, herbs, and a rich plant-based sauce.";
         this.cost = 22.99;
         this.ingredients = new ArrayList<>(List.of(
-                ir.getIngredient("veganPasta"),
-                ir.getIngredient("pastaSauce")));
+                IngredientRepository.getIngredient("veganPasta"),
+                IngredientRepository.getIngredient("pastaSauce")));
     }
 }

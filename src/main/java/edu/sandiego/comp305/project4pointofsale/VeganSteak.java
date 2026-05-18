@@ -13,13 +13,11 @@ public class VeganSteak extends MenuItem {
     }
 
     public VeganSteak(){
-        final IngredientRepository ir = new IngredientRepository();
-
         this.description = "A hearty plant-based steak, seared and" +
                 " seasoned, served with herbs and a savory " +
                 "vegan sauce.\n";
         this.cost = 49.99;
         this.ingredients = new ArrayList<>(List.of(
-                ir.getIngredient("veganSteak")));
+                IngredientRepository.getIngredient("veganSteak")));
     }
 }
