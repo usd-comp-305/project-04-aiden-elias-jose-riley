@@ -1,10 +1,17 @@
 package edu.sandiego.comp305.project4pointofsale;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ServerTest {
+
+    @BeforeEach
+    void resetIncomeBeforeEachTest() {
+        Inventory.resetIncome();
+    }
 
     @Test
     void getRole() {
@@ -14,14 +21,23 @@ class ServerTest {
     }
 
     @Test
-    void viewTickets() {
+    void createOrder() {
+        final POSSystem pos = new POSSystem();
+        final Server server = new Server(22, "Elias", "hello");
+
+        final Order order = server.createOrder(pos);
+
     }
 
     @Test
-    void updateOrderStatus() {
+    void addItemToOrder() {
     }
 
     @Test
-    void checkInventory() {
+    void submitOrder() {
+    }
+
+    @Test
+    void calculateOrderTotal() {
     }
 }

@@ -10,8 +10,8 @@ public class Server extends Staff{
         return StaffRole.SERVER;
     }
 
-    public void createOrder(final POSSystem pos){
-
+    public Order createOrder(final POSSystem pos){
+        return null;
     }
 
     public void addItemToOrder(final Order order, final MenuItem item){
