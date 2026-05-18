@@ -17,7 +17,7 @@ public class RegularSteak extends MenuItem {
     }
 
     public RegularSteak(){
-        IngredientRepository ir = new IngredientRepository();
+        final IngredientRepository ir = new IngredientRepository();
 
         this.description = "Chargrilled Rosemary Steak\n" +
                 "A tender, flame-grilled steak " +

@@ -16,7 +16,7 @@ public class RegularPasta extends MenuItem {
     }
 
     public RegularPasta(){
-        IngredientRepository ir = new IngredientRepository();
+        final IngredientRepository ir = new IngredientRepository();
 
         this.description = "Creamy Tuscan Garden Pasta\n" +
                 "A hearty bowl of penne tossed " +

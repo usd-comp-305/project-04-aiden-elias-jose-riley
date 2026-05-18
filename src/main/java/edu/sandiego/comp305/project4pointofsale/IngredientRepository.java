@@ -13,33 +13,33 @@ public class IngredientRepository {
 
     private static List<Ingredient> generateStandardIngredients() {
         // create ingredients
-        Ingredient steak = new Ingredient("steak", 15);
-        Ingredient veganSteak = new Ingredient(
+        final Ingredient steak = new Ingredient("steak", 15);
+        final Ingredient veganSteak = new Ingredient(
                 "veganSteak", 20);
-        Ingredient glutenFreeSteak = new Ingredient(
+        final Ingredient glutenFreeSteak = new Ingredient(
                 "glutenFreeSteak", 20);
-        Ingredient pasta = new Ingredient("pasta", 1.50);
-        Ingredient veganPasta = new Ingredient(
+        final Ingredient pasta = new Ingredient("pasta", 1.50);
+        final Ingredient veganPasta = new Ingredient(
                 "veganPasta", 20);
-        Ingredient glutenFreePasta = new Ingredient(
+        final Ingredient glutenFreePasta = new Ingredient(
                 "glutenFreePasta", 2.50);
-        Ingredient patty = new Ingredient(
+        final Ingredient patty = new Ingredient(
                 "patty", 0.50);
-        Ingredient veganPatty = new Ingredient(
+        final Ingredient veganPatty = new Ingredient(
                 "veganPatty", 0.75);
-        Ingredient glutenFreePatty = new Ingredient(
+        final Ingredient glutenFreePatty = new Ingredient(
                 "glutenFreePatty", 0.75);
-        Ingredient cheese = new Ingredient(
+        final Ingredient cheese = new Ingredient(
                 "cheese", 0.25);
-        Ingredient lettuce = new Ingredient("lettuce", 0.10);
-        Ingredient tomato = new Ingredient("tomato", 0.10);
-        Ingredient onion = new Ingredient("onion", 0.10);
-        Ingredient bun = new Ingredient("bun", 0.50);
-        Ingredient pastaSauce = new Ingredient(
+        final Ingredient lettuce = new Ingredient("lettuce", 0.10);
+        final Ingredient tomato = new Ingredient("tomato", 0.10);
+        final Ingredient onion = new Ingredient("onion", 0.10);
+        final Ingredient bun = new Ingredient("bun", 0.50);
+        final Ingredient pastaSauce = new Ingredient(
                 "pastaSauce", 2.50);
 
         // make empty list for ingredients
-        List<Ingredient> ingredients = new ArrayList<>();
+        final List<Ingredient> ingredients = new ArrayList<>();
 
         // add each ingredient to list
         ingredients.add(steak);

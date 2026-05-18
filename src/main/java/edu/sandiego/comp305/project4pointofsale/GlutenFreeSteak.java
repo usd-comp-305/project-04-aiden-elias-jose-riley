@@ -13,7 +13,7 @@ public class GlutenFreeSteak extends MenuItem {
     }
 
     public GlutenFreeSteak(){
-        IngredientRepository ir = new IngredientRepository();
+        final IngredientRepository ir = new IngredientRepository();
 
         this.description = "A tender gluten-free steak, grilled" +
                 " to perfection and served with fresh " +

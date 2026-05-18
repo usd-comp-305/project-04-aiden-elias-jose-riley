@@ -13,7 +13,7 @@ public class VeganBurger extends MenuItem {
     }
 
     public VeganBurger(){
-        IngredientRepository ir = new IngredientRepository();
+        final IngredientRepository ir = new IngredientRepository();
 
         this.description = "A savory plant-based burger topped with " +
                 "fresh lettuce, tomato, pickles, and vegan sauce " +

@@ -12,7 +12,7 @@ public class RegularBurger extends MenuItem {
     }
 
     public RegularBurger(){
-        IngredientRepository ir = new IngredientRepository();
+        final IngredientRepository ir = new IngredientRepository();
 
         this.description = "Grass fed patty with cheese, " +
                 "lettuce, tomato, and onions";

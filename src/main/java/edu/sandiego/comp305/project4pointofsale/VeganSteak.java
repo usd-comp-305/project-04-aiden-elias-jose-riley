@@ -13,7 +13,7 @@ public class VeganSteak extends MenuItem {
     }
 
     public VeganSteak(){
-        IngredientRepository ir = new IngredientRepository();
+        final IngredientRepository ir = new IngredientRepository();
 
         this.description = "A hearty plant-based steak, seared and" +
                 " seasoned, served with herbs and a savory " +

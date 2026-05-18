@@ -12,7 +12,7 @@ public class GlutenFreePasta extends MenuItem {
     }
 
     public GlutenFreePasta(){
-        IngredientRepository ir = new IngredientRepository();
+        final IngredientRepository ir = new IngredientRepository();
 
         this.description = "Tender gluten-free pasta tossed with " +
                 "fresh ingredients and a flavorful house sauce.\n";
