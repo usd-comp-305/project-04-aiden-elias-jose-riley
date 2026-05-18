@@ -1,5 +1,6 @@
 package edu.sandiego.comp305.project4pointofsale;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GlutenFreeBurger extends MenuItem {
@@ -11,5 +12,16 @@ public class GlutenFreeBurger extends MenuItem {
         this.cost = 13.99;
     }
 
-    public GlutenFreeBurger(){}
+    public GlutenFreeBurger(){
+        this.description = "A juicy gluten-free burger wrapped " +
+                "in crisp lettuce and topped with fresh veggies " +
+                "and savory sauce.";
+        this.cost = 13.99;
+        this.ingredients = new ArrayList<>(List.of(
+                Inventory.getGlutenFreePatty(),
+                Inventory.getCheese(), Inventory.getLettuce(),
+                Inventory.getOnion(), Inventory.getCheese(),
+                Inventory.getLettuce(), Inventory.getOnion(),
+                Inventory.getTomato()));
+    }
 }

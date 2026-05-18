@@ -7,10 +7,11 @@ public abstract class MenuItem {
 
     String description;
 
-    final List<Ingredient> ingredients;
+    List<Ingredient> ingredients;
 
     double cost;
 
+    //for custom orders, use is not yet implemented
     MenuItem(final List<Ingredient> ingredients){
         this.ingredients = new ArrayList<>(ingredients);
     }
