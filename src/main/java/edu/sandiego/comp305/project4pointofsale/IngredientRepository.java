@@ -86,8 +86,18 @@ public class IngredientRepository {
     }
 
     private static void verifyInstantiation() {
-        if  (possibleIngredients == null) {
+        if (possibleIngredients == null) {
             instantiateRepository();
         }
+    }
+
+    public static double sumCostOfEachItem() {
+        double sum = 0.0;
+
+        for (final Ingredient i : possibleIngredients) {
+            sum += i.getPrice();
+        }
+
+        return sum;
     }
 }
