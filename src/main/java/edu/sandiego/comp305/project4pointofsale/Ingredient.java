@@ -4,26 +4,23 @@ public class Ingredient {
 
     public final String name;
 
-    private int quantity;
+    private double price;
 
-    public Ingredient(final String name, final int quantity){
+    public Ingredient(final String name, final double price){
         this.name = name;
-        this.quantity = quantity;
+        this.price = price;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public double getPrice() {
+        return price;
     }
 
-    public void reduceQuantity(final int used){
-        if (used > quantity){
-            this.quantity = 0;
-        } else {
-            quantity -= used;
-        }
+    public void setPrice(final double p) {
+        if(p < 0) {throw new IllegalArgumentException();}
+        price = p;
     }
 }
