@@ -18,9 +18,12 @@ public class RegularBurger extends MenuItem {
         this.ingredients = new ArrayList<>(List.of(
                 IngredientRepository.getIngredient("bun"),
                 IngredientRepository.getIngredient("patty"),
-                IngredientRepository.getIngredient("cheese"), IngredientRepository.getIngredient("lettuce"),
-                IngredientRepository.getIngredient("onion"), IngredientRepository.getIngredient("cheese"),
-                IngredientRepository.getIngredient("lettuce"), IngredientRepository.getIngredient("onion"),
+                IngredientRepository.getIngredient("cheese"),
+                IngredientRepository.getIngredient("lettuce"),
+                IngredientRepository.getIngredient("onion"),
+                IngredientRepository.getIngredient("cheese"),
+                IngredientRepository.getIngredient("lettuce"),
+                IngredientRepository.getIngredient("onion"),
                 IngredientRepository.getIngredient("tomato")));
     }
 }

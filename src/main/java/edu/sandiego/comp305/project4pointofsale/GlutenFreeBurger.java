@@ -20,9 +20,12 @@ public class GlutenFreeBurger extends MenuItem {
         this.ingredients = new ArrayList<>(List.of(
                 IngredientRepository.getIngredient("bun"),
                 IngredientRepository.getIngredient("glutenFreePatty"),
-                IngredientRepository.getIngredient("cheese"), IngredientRepository.getIngredient("lettuce"),
-                IngredientRepository.getIngredient("onion"), IngredientRepository.getIngredient("cheese"),
-                IngredientRepository.getIngredient("lettuce"), IngredientRepository.getIngredient("onion"),
+                IngredientRepository.getIngredient("cheese"),
+                IngredientRepository.getIngredient("lettuce"),
+                IngredientRepository.getIngredient("onion"),
+                IngredientRepository.getIngredient("cheese"),
+                IngredientRepository.getIngredient("lettuce"),
+                IngredientRepository.getIngredient("onion"),
                 IngredientRepository.getIngredient("tomato")));
     }
 }
