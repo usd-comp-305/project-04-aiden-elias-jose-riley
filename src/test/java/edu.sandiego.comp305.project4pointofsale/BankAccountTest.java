@@ -76,11 +76,12 @@ public class BankAccountTest {
     }
 
     @Test
-    void payEmployeesDailyWagesDoesNotChangeBalance() {
+    void payEmployeesDailyWagesDeductsWagesFromBalance() {
         final double balanceBeforePayment = BankAccount.getAccountBalance();
+        final double expectedWages = 640.00;
 
         BankAccount.payEmployeeesDailyWages();
 
-        assertEquals(balanceBeforePayment, BankAccount.getAccountBalance());
+        assertEquals(balanceBeforePayment - expectedWages, BankAccount.getAccountBalance());
     }
 }
