@@ -82,6 +82,7 @@ public class BankAccountTest {
 
         BankAccount.payEmployeeesDailyWages();
 
-        assertEquals(balanceBeforePayment - expectedWages, BankAccount.getAccountBalance());
+        assertEquals(balanceBeforePayment - expectedWages,
+                BankAccount.getAccountBalance());
     }
 }
