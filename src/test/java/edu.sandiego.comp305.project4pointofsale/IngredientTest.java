@@ -8,21 +8,21 @@ class IngredientTest {
 
     @Test
     void getName() {
-        Ingredient ingredient = new Ingredient("vegetable", 4);
+        final Ingredient ingredient = new Ingredient("vegetable", 4);
 
         assertEquals("vegetable", ingredient.getName());
     }
 
     @Test
     void getQuantity() {
-        Ingredient ingredient = new Ingredient("vegetable", 4);
+        final Ingredient ingredient = new Ingredient("vegetable", 4);
 
         assertEquals(4, ingredient.getQuantity());
     }
 
     @Test
     void reduceQuantity() {
-        Ingredient ingredient = new Ingredient("vegetable", 4);
+        final Ingredient ingredient = new Ingredient("vegetable", 4);
 
         ingredient.reduceQuantity(1);
 
@@ -31,7 +31,7 @@ class IngredientTest {
 
     @Test
     void reduceQuantityNeverBelow0() {
-        Ingredient ingredient = new Ingredient("vegetable", 4);
+        final Ingredient ingredient = new Ingredient("vegetable", 4);
 
         ingredient.reduceQuantity(5);
 

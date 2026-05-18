@@ -22,8 +22,7 @@ public class Ingredient {
     public void reduceQuantity(final int used){
         if (used > quantity){
             this.quantity = 0;
-        }
-        else {
+        } else {
             quantity -= used;
         }
     }
