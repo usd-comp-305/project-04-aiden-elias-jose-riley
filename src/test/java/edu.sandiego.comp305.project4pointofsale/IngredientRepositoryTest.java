@@ -1,22 +1,14 @@
 package edu.sandiego.comp305.project4pointofsale;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class IngredientRepositoryTest {
-    
-    private static IngredientRepository ingredientRepository = null;
-
-    @BeforeAll
-    static void setup(){
-        ingredientRepository = new IngredientRepository();
-    }
 
     @Test
     void getPriceOfIngredientInRepo() {
-        final double storedPrice = ingredientRepository.getPrice("steak");
+        final double storedPrice = IngredientRepository.getPrice("steak");
 
         assertEquals(15, storedPrice);
     }
@@ -24,13 +16,13 @@ public class IngredientRepositoryTest {
     @Test
     void getPriceOfIngredientNotInRepo() {
         assertThrows(IllegalArgumentException.class,
-                () -> ingredientRepository.getPrice("a"));
+                () -> IngredientRepository.getPrice("a"));
     }
 
     @Test
     void getIngredientInRepo() {
         final Ingredient testSteak = new Ingredient("steak", 15);
 
-        assertEquals(testSteak,ingredientRepository.getIngredient("steak"));
+        assertEquals(testSteak,IngredientRepository.getIngredient("steak"));
     }
 }
