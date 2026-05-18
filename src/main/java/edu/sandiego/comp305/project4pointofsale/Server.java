@@ -10,10 +10,21 @@ public class Server extends Staff{
         return StaffRole.SERVER;
     }
 
-    public void viewTickets(){}
+    public void createOrder(final POSSystem pos){
 
-    public void updateOrderStatus(){}
+    }
 
-    public void checkInventory(){}
+    public void addItemToOrder(final Order order, final MenuItem item){
+
+    }
+
+    public void submitOrder(final POSSystem pos, final Order order){
+
+    }
+
+    public double calculateOrderTotal(final Order order){
+        return 0.0;
+    }
+
 
 }
