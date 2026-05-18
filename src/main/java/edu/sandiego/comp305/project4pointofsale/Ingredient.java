@@ -20,7 +20,9 @@ public class Ingredient {
     }
 
     public void setPrice(final double p) {
-        if(p < 0) {throw new IllegalArgumentException();}
+        if(p < 0) {
+            throw new IllegalArgumentException();
+        }
         price = p;
     }
 }
