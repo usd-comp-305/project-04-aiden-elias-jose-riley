@@ -33,7 +33,9 @@ class IngredientTest {
     void setNegativePrice() {
         final Ingredient ingredient = new Ingredient("vegetable", 0.5);
 
-        assertThrows(IllegalArgumentException.class, () -> {ingredient.setPrice(-1);});
+        assertThrows(IllegalArgumentException.class, () -> {
+            ingredient.setPrice(-1);
+        });
 
     }
 
