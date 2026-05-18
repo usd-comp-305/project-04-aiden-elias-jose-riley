@@ -5,8 +5,20 @@ public class Chef extends Staff{
         super(id, name, password);
     }
 
-    public void createOrder(){}
+    @Override
+    public StaffRole getRole() {
+        return StaffRole.CHEF;
+    }
 
-    public void sendOrder(){}
+    public void startTicket(final KitchenTicket ticket){
+        ticket.setStatus(Status.IN_PROCESS);
+    }
 
+    public void markTicketReady(final KitchenTicket ticket){
+        ticket.setStatus(Status.COMPLETED);
+    }
+
+    public void markTicketDelivered(final KitchenTicket ticket){
+        ticket.setStatus(Status.DELIVERED);
+    }
 }

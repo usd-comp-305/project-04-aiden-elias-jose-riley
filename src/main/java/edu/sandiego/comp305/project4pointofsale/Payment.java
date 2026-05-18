@@ -2,13 +2,13 @@ package edu.sandiego.comp305.project4pointofsale;
 
 public class Payment {
 
-    private int paymentId;
+    private final int paymentId;
 
-    private double amount;
+    private final double amount;
 
     private PaymentStatus paymentStatus;
 
-    private PaymentMethod paymentMethod;
+    private final PaymentMethod paymentMethod;
 
     public Payment(final int paymentId,
                    final double amount,
@@ -20,10 +20,27 @@ public class Payment {
     }
 
     public boolean processPayment(){
+        if (amount <= 0 || paymentMethod == null) {
+            paymentStatus = PaymentStatus.DECLINED;
+            return false;
+        }
+
+        final boolean successful = paymentMethod.pay(amount);
+
+        if (successful) {
+            paymentStatus = PaymentStatus.APPROVED;
+            return true;
+        }
+
+        paymentStatus = PaymentStatus.DECLINED;
         return false;
     }
 
     public boolean refundPayment(){
+        if (paymentStatus == PaymentStatus.APPROVED) {
+            paymentStatus = PaymentStatus.REFUNDED;
+            return true;
+        }
         return false;
     }
 
