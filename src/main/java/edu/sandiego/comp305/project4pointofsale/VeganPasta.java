@@ -16,6 +16,7 @@ public class VeganPasta extends MenuItem {
                 "vegetables, herbs, and a rich plant-based sauce.";
         this.cost = 22.99;
         this.ingredients = new ArrayList<>(List.of(
-                Inventory.getVeganPasta(), Inventory.getPastaSauce()));
+                IngredientRepository.getIngredient("veganPasta"),
+                IngredientRepository.getIngredient("pastaSauce")));
     }
 }
