@@ -17,6 +17,7 @@ public class VeganSteak extends MenuItem {
                 " seasoned, served with herbs and a savory " +
                 "vegan sauce.\n";
         this.cost = 49.99;
-        this.ingredients = new ArrayList<>(List.of(Inventory.getVeganSteak()));
+        this.ingredients = new ArrayList<>(List.of(
+                Inventory.getVeganSteak()));
     }
 }

@@ -11,7 +11,7 @@ public abstract class MenuItem {
 
     double cost;
 
-    //for custom orders
+    //for custom orders, use is not yet implemented
     MenuItem(final List<Ingredient> ingredients){
         this.ingredients = new ArrayList<>(ingredients);
     }

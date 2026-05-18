@@ -8,25 +8,28 @@ public class RegularMealFactoryTest {
 
     @Test
     public void factoryCreatesCorrectBurger(){
-        RegularMealFactory factory = new RegularMealFactory();
-        MenuItem burger = factory.createBurger();
+        final RegularMealFactory factory = new RegularMealFactory();
+        final MenuItem burger = factory.createBurger();
 
-        assertEquals(new RegularBurger().getIngredients(), burger.getIngredients());
+        assertEquals(new RegularBurger().getIngredients(),
+                burger.getIngredients());
     }
 
     @Test
     public void factoryCreatesCorrectPasta(){
-        RegularMealFactory factory = new RegularMealFactory();
-        MenuItem pasta = factory.createPasta();
+        final RegularMealFactory factory = new RegularMealFactory();
+        final MenuItem pasta = factory.createPasta();
 
-        assertEquals(new RegularPasta().getIngredients(), pasta.getIngredients());
+        assertEquals(new RegularPasta().getIngredients(),
+                pasta.getIngredients());
     }
 
     @Test
     public void factoryCreatesCorrectSteak(){
-        RegularMealFactory factory = new RegularMealFactory();
-        MenuItem steak = factory.createSteak();
+        final RegularMealFactory factory = new RegularMealFactory();
+        final MenuItem steak = factory.createSteak();
 
-        assertEquals(new RegularSteak().getIngredients(), steak.getIngredients());
+        assertEquals(new RegularSteak().getIngredients(),
+                steak.getIngredients());
     }
 }

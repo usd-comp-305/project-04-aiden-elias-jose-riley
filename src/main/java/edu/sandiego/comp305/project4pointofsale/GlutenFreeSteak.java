@@ -17,6 +17,7 @@ public class GlutenFreeSteak extends MenuItem {
                 " to perfection and served with fresh " +
                 "herbs and savory sauce.\n";
         this.cost = 34.99;
-        this.ingredients = new ArrayList<>(List.of(Inventory.getGlutenFreeSteak()));
+        this.ingredients = new ArrayList<>(List.of(
+                Inventory.getGlutenFreeSteak()));
     }
 }

@@ -17,9 +17,10 @@ public class VeganBurger extends MenuItem {
                 "fresh lettuce, tomato, pickles, and vegan sauce " +
                 "on a toasted bun.";
         this.cost = 29.99;
-        this.ingredients = new ArrayList<>(List.of(Inventory.getBun(), Inventory.getVeganPatty(),
-                Inventory.getCheese(), Inventory.getLettuce(), Inventory.getOnion(),
-                Inventory.getCheese(), Inventory.getLettuce(), Inventory.getOnion(),
-                Inventory.getTomato()));
+        this.ingredients = new ArrayList<>(List.of(Inventory.getBun(),
+                Inventory.getVeganPatty(), Inventory.getCheese(),
+                Inventory.getLettuce(), Inventory.getOnion(),
+                Inventory.getCheese(), Inventory.getLettuce(),
+                Inventory.getOnion(), Inventory.getTomato()));
     }
 }

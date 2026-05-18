@@ -15,6 +15,7 @@ public class VeganPasta extends MenuItem {
         this.description = "A creamy vegan pasta tossed with fresh " +
                 "vegetables, herbs, and a rich plant-based sauce.";
         this.cost = 22.99;
-        this.ingredients = new ArrayList<>(List.of(Inventory.getVeganPasta(), Inventory.getPastaSauce()));
+        this.ingredients = new ArrayList<>(List.of(
+                Inventory.getVeganPasta(), Inventory.getPastaSauce()));
     }
 }

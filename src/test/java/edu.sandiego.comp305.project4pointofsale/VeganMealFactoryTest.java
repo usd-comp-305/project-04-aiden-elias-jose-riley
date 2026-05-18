@@ -8,25 +8,28 @@ public class VeganMealFactoryTest {
 
     @Test
     public void factoryCreatesCorrectBurger(){
-        VeganMealFactory factory = new VeganMealFactory();
-        MenuItem burger = factory.createBurger();
+        final VeganMealFactory factory = new VeganMealFactory();
+        final MenuItem burger = factory.createBurger();
 
-        assertEquals(new VeganBurger().getIngredients(), burger.getIngredients());
+        assertEquals(new VeganBurger().getIngredients(),
+                burger.getIngredients());
     }
 
     @Test
     public void factoryCreatesCorrectPasta(){
-        VeganMealFactory factory = new VeganMealFactory();
-        MenuItem pasta = factory.createPasta();
+        final VeganMealFactory factory = new VeganMealFactory();
+        final MenuItem pasta = factory.createPasta();
 
-        assertEquals(new VeganPasta().getIngredients(), pasta.getIngredients());
+        assertEquals(new VeganPasta().getIngredients(),
+                pasta.getIngredients());
     }
 
     @Test
     public void factoryCreatesCorrectSteak(){
-        VeganMealFactory factory = new VeganMealFactory();
-        MenuItem steak = factory.createSteak();
+        final VeganMealFactory factory = new VeganMealFactory();
+        final MenuItem steak = factory.createSteak();
 
-        assertEquals(new VeganSteak().getIngredients(), steak.getIngredients());
+        assertEquals(new VeganSteak().getIngredients(),
+                steak.getIngredients());
     }
 }

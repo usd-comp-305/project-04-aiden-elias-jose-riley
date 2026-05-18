@@ -8,25 +8,28 @@ public class GlutenFreeMealFactoryTest {
 
     @Test
     public void factoryCreatesCorrectBurger(){
-        GlutenFreeMealFactory factory = new GlutenFreeMealFactory();
-        MenuItem burger = factory.createBurger();
+        final GlutenFreeMealFactory factory = new GlutenFreeMealFactory();
+        final MenuItem burger = factory.createBurger();
 
-        assertEquals(new GlutenFreeBurger().getIngredients(), burger.getIngredients());
+        assertEquals(new GlutenFreeBurger().getIngredients(),
+                burger.getIngredients());
     }
 
     @Test
     public void factoryCreatesCorrectPasta(){
-        GlutenFreeMealFactory factory = new GlutenFreeMealFactory();
-        MenuItem pasta = factory.createPasta();
+        final GlutenFreeMealFactory factory = new GlutenFreeMealFactory();
+        final MenuItem pasta = factory.createPasta();
 
-        assertEquals(new GlutenFreePasta().getIngredients(), pasta.getIngredients());
+        assertEquals(new GlutenFreePasta().getIngredients(),
+                pasta.getIngredients());
     }
 
     @Test
     public void factoryCreatesCorrectSteak(){
-        GlutenFreeMealFactory factory = new GlutenFreeMealFactory();
-        MenuItem steak = factory.createSteak();
+        final GlutenFreeMealFactory factory = new GlutenFreeMealFactory();
+        final MenuItem steak = factory.createSteak();
 
-        assertEquals(new GlutenFreeSteak().getIngredients(), steak.getIngredients());
+        assertEquals(new GlutenFreeSteak().getIngredients(),
+                steak.getIngredients());
     }
 }

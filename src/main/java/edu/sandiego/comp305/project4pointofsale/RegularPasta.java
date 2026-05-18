@@ -23,6 +23,7 @@ public class RegularPasta extends MenuItem {
                 " and fresh basil. Finished with cracked black pepper " +
                 "and a sprinkle of parmesan cheese.";
         this.cost = 15.99;
-        this.ingredients = new ArrayList<>(List.of(Inventory.getPasta(), Inventory.getPastaSauce()));
+        this.ingredients = new ArrayList<>(List.of(
+                Inventory.getPasta(), Inventory.getPastaSauce()));
     }
 }

@@ -17,9 +17,11 @@ public class GlutenFreeBurger extends MenuItem {
                 "in crisp lettuce and topped with fresh veggies " +
                 "and savory sauce.";
         this.cost = 13.99;
-        this.ingredients = new ArrayList<>(List.of(Inventory.getGlutenFreePatty(),
-                Inventory.getCheese(), Inventory.getLettuce(), Inventory.getOnion(),
-                Inventory.getCheese(), Inventory.getLettuce(), Inventory.getOnion(),
+        this.ingredients = new ArrayList<>(List.of(
+                Inventory.getGlutenFreePatty(),
+                Inventory.getCheese(), Inventory.getLettuce(),
+                Inventory.getOnion(), Inventory.getCheese(),
+                Inventory.getLettuce(), Inventory.getOnion(),
                 Inventory.getTomato()));
     }
 }
