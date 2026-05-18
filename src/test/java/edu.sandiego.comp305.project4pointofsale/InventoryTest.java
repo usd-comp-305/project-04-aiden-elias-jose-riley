@@ -1,4 +1,5 @@
-import edu.sandiego.comp305.project4pointofsale.*;
+package edu.sandiego.comp305.project4pointofsale;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
@@ -6,7 +7,7 @@ import org.junit.jupiter.api.Assertions;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InventoryTests {
+public class InventoryTest {
     private static List<Ingredient> sampleInventory;
 
     @BeforeAll
