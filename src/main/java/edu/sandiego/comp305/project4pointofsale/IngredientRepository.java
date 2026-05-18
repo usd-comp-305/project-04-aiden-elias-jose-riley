@@ -61,17 +61,17 @@ public class IngredientRepository {
         return ingredients;
     }
 
-    public double getPrice(final String ingredientName) {
+    public static double getPrice(final String ingredientName) {
         verifyInstantiation();
         return findIngredientByName(ingredientName).getPrice();
     }
 
-    public Ingredient getIngredient(final String ingredientName) {
+    public static Ingredient getIngredient(final String ingredientName) {
         verifyInstantiation();
         return findIngredientByName(ingredientName);
     }
 
-    private Ingredient findIngredientByName(final String ingredientName) {
+    private static Ingredient findIngredientByName(final String ingredientName) {
         for (Ingredient i : possibleIngredients) {
             if (i.getName().equals(ingredientName)) {
                 return i;
@@ -81,7 +81,7 @@ public class IngredientRepository {
         throw new IllegalArgumentException("Ingredient does not exist");
     }
 
-    private void verifyInstantiation() {
+    private static void verifyInstantiation() {
         if  (possibleIngredients == null) {
             instantiateRepository();
         }
