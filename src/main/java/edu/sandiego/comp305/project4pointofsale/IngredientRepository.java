@@ -6,7 +6,8 @@ import java.util.List;
 public class IngredientRepository {
     private static List<Ingredient> possibleIngredients;
 
-    public IngredientRepository() {
+
+    private static void instantiateRepository() {
         possibleIngredients = generateStandardIngredients();
     }
 
@@ -61,10 +62,12 @@ public class IngredientRepository {
     }
 
     public double getPrice(final String ingredientName) {
+        verifyInstantiation();
         return findIngredientByName(ingredientName).getPrice();
     }
 
     public Ingredient getIngredient(final String ingredientName) {
+        verifyInstantiation();
         return findIngredientByName(ingredientName);
     }
 
@@ -76,5 +79,11 @@ public class IngredientRepository {
         }
 
         throw new IllegalArgumentException("Ingredient does not exist");
+    }
+
+    private void verifyInstantiation() {
+        if  (possibleIngredients == null) {
+            instantiateRepository();
+        }
     }
 }
