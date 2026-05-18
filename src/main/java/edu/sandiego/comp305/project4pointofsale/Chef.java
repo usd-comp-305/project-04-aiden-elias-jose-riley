@@ -10,8 +10,15 @@ public class Chef extends Staff{
         return StaffRole.CHEF;
     }
 
-    public void createOrder(){}
+    public void startTicket(final KitchenTicket ticket){
 
-    public void sendOrder(){}
+    }
 
+    public void markTicketReady(final KitchenTicket ticket){
+
+    }
+
+    public void markTicketDelivered(final KitchenTicket ticket){
+
+    }
 }
