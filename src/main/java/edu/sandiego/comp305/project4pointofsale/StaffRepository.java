@@ -34,5 +34,14 @@ public class StaffRepository {
         return staffMembers.size();
     }
 
+    public int[] getRoleCounts(){
+        int[] staffRolesCounts = new int[StaffRole.values().length];
+        for(Staff staff : staffMembers){
+            staffRolesCounts[staff.getRole().ordinal()]++;
+        }
+
+        return staffRolesCounts;
+    }
+
 
 }
