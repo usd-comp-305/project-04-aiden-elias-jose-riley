@@ -35,14 +35,16 @@ public class BankAccountTest {
     void addIncomeWithZeroDoesNotChangeBalance() {
         BankAccount.addIncome(0.0);
 
-        assertEquals(STANDARD_STARTING_BALANCE, BankAccount.getAccountBalance());
+        assertEquals(STANDARD_STARTING_BALANCE,
+                BankAccount.getAccountBalance());
     }
 
     @Test
     void addIncomeWithMultipleAmountsAccumulates() {
         final double firstIncome = 100.00;
         final double secondIncome = 200.00;
-        final double expectedBalance = STANDARD_STARTING_BALANCE + firstIncome + secondIncome;
+        final double expectedBalance =
+                STANDARD_STARTING_BALANCE + firstIncome + secondIncome;
 
         BankAccount.addIncome(firstIncome);
         BankAccount.addIncome(secondIncome);
@@ -62,7 +64,8 @@ public class BankAccountTest {
 
         BankAccount.resetBalance();
 
-        assertEquals(STANDARD_STARTING_BALANCE, BankAccount.getAccountBalance());
+        assertEquals(STANDARD_STARTING_BALANCE,
+                BankAccount.getAccountBalance());
     }
 
     @Test
