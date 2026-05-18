@@ -77,7 +77,7 @@ class POSSystemTest {
         final Server elias = new Server(1, "elias", "1234");
 
         final Order order1 = pos.createOrder(elias);
-        VeganBurger burger = new VeganBurger();
+        final VeganBurger burger = new VeganBurger();
         order1.addItem(burger);
 
         pos.placeOrder(order1);

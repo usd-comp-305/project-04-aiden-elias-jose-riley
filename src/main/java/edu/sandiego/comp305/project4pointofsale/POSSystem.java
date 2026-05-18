@@ -14,6 +14,7 @@ public class POSSystem {
     private final List<KitchenTicket> placedKitchenTickets;
 
     private int nextOrderId;
+
     private int nextTicketId;
 
     public POSSystem(){
@@ -31,7 +32,7 @@ public class POSSystem {
     public void placeOrder(final Order placedOrder){
         placedOrders.add(placedOrder);
 
-        KitchenTicket ticket = generateTicket(placedOrder);
+        final KitchenTicket ticket = generateTicket(placedOrder);
         placedKitchenTickets.add(ticket);
 
         Inventory.addIncome(placedOrder.calculateTotal());
@@ -57,7 +58,4 @@ public class POSSystem {
     public double getProfit(){
         return Inventory.getIncome();
     }
-
-
-
 }
