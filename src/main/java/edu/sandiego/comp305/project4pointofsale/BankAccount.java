@@ -22,10 +22,10 @@ public class BankAccount {
               * IngredientRepository.sumCostOfEachItem();
 
 
-    private static final Map<StaffRole,Double> employeeDailySalaries
+    private static Map<StaffRole,Double> employeeDailySalaries
             = new HashMap<>();
 
-    private static final StaffRepository staffRepository
+    private static StaffRepository staffRepository
             = new StaffRepository();
 
 
