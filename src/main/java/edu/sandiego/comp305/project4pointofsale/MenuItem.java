@@ -45,4 +45,20 @@ public abstract class MenuItem {
     public void setDescription(final String description) {
         this.description = description;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        final MenuItem casted = (MenuItem) o;
+        return casted.ingredients.equals(this.ingredients)
+                && this.cost == casted.cost
+                && this.description.equals(casted.description);
+    }
 }
