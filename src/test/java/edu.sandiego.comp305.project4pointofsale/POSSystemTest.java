@@ -77,7 +77,7 @@ class POSSystemTest {
         final Server elias = new Server(1, "elias", "1234");
 
         final Order order1 = pos.createOrder(elias);
-        VeganBurger burger = new VeganBurger()
+        VeganBurger burger = new VeganBurger();
         order1.addItem(burger);
 
         pos.placeOrder(order1);
@@ -86,11 +86,4 @@ class POSSystemTest {
         assertEquals(29.99, pos.getProfit());
     }
 
-    @Test
-    void getKitchenTickets() {
-    }
-
-    @Test
-    void getProfit() {
-    }
 }
