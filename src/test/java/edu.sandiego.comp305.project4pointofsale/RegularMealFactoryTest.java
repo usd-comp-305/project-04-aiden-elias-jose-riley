@@ -11,8 +11,8 @@ public class RegularMealFactoryTest {
         final RegularMealFactory factory = new RegularMealFactory();
         final MenuItem burger = factory.createBurger();
 
-        assertEquals(new RegularBurger().getIngredients(),
-                burger.getIngredients());
+        assertEquals(new RegularBurger().getIngredients().toString(),
+                burger.getIngredients().toString());
     }
 
     @Test
@@ -20,8 +20,8 @@ public class RegularMealFactoryTest {
         final RegularMealFactory factory = new RegularMealFactory();
         final MenuItem pasta = factory.createPasta();
 
-        assertEquals(new RegularPasta().getIngredients(),
-                pasta.getIngredients());
+        assertEquals(new RegularPasta().getIngredients().toString(),
+                pasta.getIngredients().toString());
     }
 
     @Test
@@ -29,7 +29,7 @@ public class RegularMealFactoryTest {
         final RegularMealFactory factory = new RegularMealFactory();
         final MenuItem steak = factory.createSteak();
 
-        assertEquals(new RegularSteak().getIngredients(),
-                steak.getIngredients());
+        assertEquals(new RegularSteak().getIngredients().toString(),
+                steak.getIngredients().toString());
     }
 }
