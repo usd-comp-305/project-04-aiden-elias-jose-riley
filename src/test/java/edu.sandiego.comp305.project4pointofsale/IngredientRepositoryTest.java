@@ -11,19 +11,20 @@ public class IngredientRepositoryTest {
 
     @BeforeAll
     static void setup(){
-        final ingredientRepository = new IngredientRepository();
+        ingredientRepository = new IngredientRepository();
     }
 
     @Test
-     void getPriceOfIngredientInRepo() {
+    void getPriceOfIngredientInRepo() {
         final double storedPrice = ingredientRepository.getPrice("steak");
 
         assertEquals(15, storedPrice);
     }
 
     @Test
-     void getPriceOfIngredientNotInRepo() {
-        assertThrows(IllegalArgumentException.class, () -> ingredientRepository.getPrice("a"));
+    void getPriceOfIngredientNotInRepo() {
+        assertThrows(IllegalArgumentException.class,
+                () -> ingredientRepository.getPrice("a"));
     }
 
     @Test
