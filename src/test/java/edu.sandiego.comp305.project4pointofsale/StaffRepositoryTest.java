@@ -46,7 +46,7 @@ class StaffRepositoryTest {
     void countDefaultStaffInRepo() {
         final StaffRepository repository = new StaffRepository();
 
-        int[] staffCount = repository.getRoleCounts();
+        final int[] staffCount = repository.getRoleCounts();
 
         assertEquals(2, staffCount[0]);
         assertEquals(2, staffCount[1]);
