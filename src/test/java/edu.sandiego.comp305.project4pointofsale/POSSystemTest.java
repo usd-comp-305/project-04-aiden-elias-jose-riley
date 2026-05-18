@@ -21,7 +21,7 @@ class POSSystemTest {
         final Order order = pos.createOrder(elias);
 
         assertEquals(17001, order.getOrderId());
-        assertEquals(elias, order.getServer());
+        assertEquals(elias.getId(), order.getServerId());
     }
 
     @Test

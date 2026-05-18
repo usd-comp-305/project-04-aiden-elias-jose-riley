@@ -6,19 +6,23 @@ import java.util.List;
 public class Order {
     private final int orderId;
 
-    private final Server server;
+    private final int serverId;
+
+    private final String serverName;
 
     private final List<MenuItem> items;
 
     public Order(final Order order) {
         this.orderId = order.orderId;
-        this.server = order.server;
+        this.serverId = order.serverId;
+        this.serverName = order.serverName;
         this.items = new ArrayList<>(order.items);
     }
 
     public Order(final int orderId, final Server server){
         this.orderId = orderId;
-        this.server = server;
+        this.serverId = server.getId();
+        this.serverName = server.getName();
         this.items = new ArrayList<>();
     }
 
@@ -27,8 +31,12 @@ public class Order {
         return orderId;
     }
 
-    public Server getServer(){
-        return server;
+    public int getServerId(){
+        return this.serverId;
+    }
+
+    public String getServerName(){
+        return this.serverName;
     }
 
 
