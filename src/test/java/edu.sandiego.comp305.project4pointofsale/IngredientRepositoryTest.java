@@ -11,12 +11,12 @@ public class IngredientRepositoryTest {
 
     @BeforeAll
     static void setup(){
-        ingredientRepository = new IngredientRepository();
+        final ingredientRepository = new IngredientRepository();
     }
 
     @Test
      void getPriceOfIngredientInRepo() {
-        double storedPrice = ingredientRepository.getPrice("steak");
+        final double storedPrice = ingredientRepository.getPrice("steak");
 
         assertEquals(15, storedPrice);
     }
@@ -28,7 +28,7 @@ public class IngredientRepositoryTest {
 
     @Test
     void getIngredientInRepo() {
-        Ingredient testSteak = new Ingredient("steak", 15);
+        final Ingredient testSteak = new Ingredient("steak", 15);
 
         assertEquals(testSteak,ingredientRepository.getIngredient("steak"));
     }

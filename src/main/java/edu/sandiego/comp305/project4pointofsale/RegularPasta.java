@@ -26,6 +26,7 @@ public class RegularPasta extends MenuItem {
                 "and a sprinkle of parmesan cheese.";
         this.cost = 15.99;
         this.ingredients = new ArrayList<>(List.of(
-                ir.getIngredient("pasta"), ir.getIngredient("pastaSauce")));
+                ir.getIngredient("pasta"),
+                ir.getIngredient("pastaSauce")));
     }
 }

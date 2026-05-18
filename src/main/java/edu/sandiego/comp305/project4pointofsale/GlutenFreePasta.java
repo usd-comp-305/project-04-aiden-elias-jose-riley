@@ -18,6 +18,7 @@ public class GlutenFreePasta extends MenuItem {
                 "fresh ingredients and a flavorful house sauce.\n";
         this.cost = 15.99;
         this.ingredients = new ArrayList<>(List.of(
-                ir.getIngredient("glutenFreePasta"), ir.getIngredient("pastaSauce")));
+                ir.getIngredient("glutenFreePasta"),
+                ir.getIngredient("pastaSauce")));
     }
 }
