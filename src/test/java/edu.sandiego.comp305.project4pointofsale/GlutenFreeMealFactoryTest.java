@@ -11,8 +11,8 @@ public class GlutenFreeMealFactoryTest {
         final GlutenFreeMealFactory factory = new GlutenFreeMealFactory();
         final MenuItem burger = factory.createBurger();
 
-        assertEquals(new GlutenFreeBurger().getIngredients().toString(),
-                burger.getIngredients().toString());
+        assertEquals(new GlutenFreeBurger().getIngredients(),
+                burger.getIngredients());
     }
 
     @Test
@@ -20,8 +20,8 @@ public class GlutenFreeMealFactoryTest {
         final GlutenFreeMealFactory factory = new GlutenFreeMealFactory();
         final MenuItem pasta = factory.createPasta();
 
-        assertEquals(new GlutenFreePasta().getIngredients().toString(),
-                pasta.getIngredients().toString());
+        assertEquals(new GlutenFreePasta().getIngredients(),
+                pasta.getIngredients());
     }
 
     @Test
@@ -29,7 +29,7 @@ public class GlutenFreeMealFactoryTest {
         final GlutenFreeMealFactory factory = new GlutenFreeMealFactory();
         final MenuItem steak = factory.createSteak();
 
-        assertEquals(new GlutenFreeSteak().getIngredients().toString(),
-                steak.getIngredients().toString());
+        assertEquals(new GlutenFreeSteak().getIngredients(),
+                steak.getIngredients());
     }
 }

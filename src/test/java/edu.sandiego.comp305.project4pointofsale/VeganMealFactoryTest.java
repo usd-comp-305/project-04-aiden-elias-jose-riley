@@ -11,8 +11,8 @@ public class VeganMealFactoryTest {
         final VeganMealFactory factory = new VeganMealFactory();
         final MenuItem burger = factory.createBurger();
 
-        assertEquals(new VeganBurger().getIngredients().toString(),
-                burger.getIngredients().toString());
+        assertEquals(new VeganBurger().getIngredients(),
+                burger.getIngredients());
     }
 
     @Test
@@ -20,8 +20,8 @@ public class VeganMealFactoryTest {
         final VeganMealFactory factory = new VeganMealFactory();
         final MenuItem pasta = factory.createPasta();
 
-        assertEquals(new VeganPasta().getIngredients().toString(),
-                pasta.getIngredients().toString());
+        assertEquals(new VeganPasta().getIngredients(),
+                pasta.getIngredients());
     }
 
     @Test
@@ -29,7 +29,7 @@ public class VeganMealFactoryTest {
         final VeganMealFactory factory = new VeganMealFactory();
         final MenuItem steak = factory.createSteak();
 
-        assertEquals(new VeganSteak().getIngredients().toString(),
-                steak.getIngredients().toString());
+        assertEquals(new VeganSteak().getIngredients(),
+                steak.getIngredients());
     }
 }
