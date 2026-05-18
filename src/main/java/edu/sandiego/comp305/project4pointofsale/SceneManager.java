@@ -17,14 +17,14 @@ public class SceneManager {
                                    final String fxmlFile,
                                    final String title) throws IOException{
 
-        URL fxmlLocation = HelloApplication.class.getResource(fxmlFile);
+        final URL fxmlLocation = HelloApplication.class.getResource(fxmlFile);
 
         if (fxmlLocation == null){
             throw new IOException("cant find: " + fxmlFile);
         }
 
-        FXMLLoader loader = new FXMLLoader(fxmlLocation);
-        Scene scene = new Scene(loader.load(), 600, 400);
+        final FXMLLoader loader = new FXMLLoader(fxmlLocation);
+        final Scene scene = new Scene(loader.load(), 600, 400);
 
         stage.setTitle(title);
         stage.setScene(scene);

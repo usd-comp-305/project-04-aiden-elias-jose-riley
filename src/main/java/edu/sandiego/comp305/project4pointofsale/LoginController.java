@@ -19,20 +19,20 @@ public class LoginController {
 
     @FXML
     private void handleLogin() throws IOException {
-        String pin = pinField.getText();
+        final String pin = pinField.getText();
 
-        Staff staff = loginService.login(pin);
+        final Staff staff = loginService.login(pin);
 
         if (staff == null) {
             messageLabel.setText("Invalid PIN");
         } else if (staff.getRole() == StaffRole.SERVER) {
-            Stage stage = (Stage) pinField.getScene().getWindow();
+            final Stage stage = (Stage) pinField.getScene().getWindow();
             SceneManager.switchScene(stage,
                     "server-view.fxml",
                     "Server Dashboard");
         } else if (staff.getRole() == StaffRole.CHEF) {
             messageLabel.setText("Welcome Chef: " + staff.getName());
-            Stage stage = (Stage) pinField.getScene().getWindow();
+            final Stage stage = (Stage) pinField.getScene().getWindow();
             SceneManager.switchScene(stage,
                     "chef-view.fxml",
                     "Chef Dashboard");
