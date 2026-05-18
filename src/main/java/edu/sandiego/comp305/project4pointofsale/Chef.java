@@ -10,8 +10,15 @@ public class Chef extends Staff{
         return StaffRole.CHEF;
     }
 
-    public void createOrder(){}
+    public void startTicket(final KitchenTicket ticket){
+        ticket.setStatus(Status.IN_PROCESS);
+    }
 
-    public void sendOrder(){}
+    public void markTicketReady(final KitchenTicket ticket){
+        ticket.setStatus(Status.COMPLETED);
+    }
 
+    public void markTicketDelivered(final KitchenTicket ticket){
+        ticket.setStatus(Status.DELIVERED);
+    }
 }
