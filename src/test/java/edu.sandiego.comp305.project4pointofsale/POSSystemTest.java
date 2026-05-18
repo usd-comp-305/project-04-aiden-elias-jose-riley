@@ -65,7 +65,7 @@ class POSSystemTest {
 
 
         assertEquals(1, pos.getNumKitchenTickets());
-        assertEquals(501, pos.getKitchenTickets()
+        assertEquals(501, pos.getPlacedKitchenTickets()
                 .getFirst().getTicketId());
 
     }
