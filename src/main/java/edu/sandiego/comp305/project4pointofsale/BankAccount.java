@@ -33,7 +33,7 @@ public class BankAccount {
 
     }
 
-    public static void initializeEmployeeSalaries() {
+    static {
         for (int i = 0;
              i < BASE_EMPLOYEE_SALARIES_FOR_DAY.length
                      && i < StaffRole.values().length; i++) {
