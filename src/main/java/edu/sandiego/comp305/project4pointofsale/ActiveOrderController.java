@@ -71,15 +71,8 @@ public class ActiveOrderController {
     }
 
     @FXML
-    private void handleSendToKitchen(){
-        if (order.getSentItemCount() == order.getItems().size()) {
-            return;
-        }
+    private void handleSendToKitchen() throws IOException {
 
-        final Order ticketOrder = createOrderForUnsentItems();
-        posSystem.placeOrder(ticketOrder);
-        order.markItemsAsSent();
-        refreshCart();
     }
 
     @FXML
