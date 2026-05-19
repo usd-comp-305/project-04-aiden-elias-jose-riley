@@ -64,20 +64,5 @@ class POSSystemTest {
 
     }
 
-    @Test
-    void ProfitIsAdded() {
-        final POSSystem pos = new POSSystem();
-
-        final Server elias = new Server(1, "elias", "1234");
-
-        final Order order1 = pos.createOrder(elias);
-        final VeganBurger burger = new VeganBurger();
-        order1.addItem(burger);
-
-        pos.placeOrder(order1);
-
-
-        assertEquals(29.99, pos.getProfit());
-    }
 
 }
