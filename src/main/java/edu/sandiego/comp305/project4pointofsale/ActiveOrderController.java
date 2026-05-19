@@ -74,62 +74,12 @@ public class ActiveOrderController {
 
     @FXML
     private void handleSendToKitchen() throws IOException {
-        // grab all cart items
-        final ObservableList<MenuItem> cartItems =
-                cartList.getItems();
 
-        if (cartItems.isEmpty()) {
-            // show alert & reset state
-            final Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Empty Cart");
-            alert.setHeaderText(null);
-            alert.setContentText("Please add " +
-                    "at least one item before sending to the kitchen.");
-            alert.showAndWait();
-            return;
-        }
-
-        // build order for Server to take
-        final Order order =
-                ChefController.POS_SYSTEM.createOrder(currentServer);
-        for (MenuItem item : cartItems) {
-            order.addItem(item);
-        }
-
-        ChefController.POS_SYSTEM.placeOrder(order);
-
-        // clear cart to start fresh for next
-        cartList.getItems().clear();
-        totalLabel.setText("Total: $0.00");
-
-        // navigate to the chef screen so ticket is immediately visible
-        final Stage stage = (Stage) cartList.getScene().getWindow();
-        SceneManager.switchScene(stage,
-                "chef-view.fxml", "POS — Chef Dashboard");
     }
 
     @FXML
     private void handlePay() {
-        // show confirmation & clear cart
-        if (cartList.getItems().isEmpty()) {
-            final Alert alert =
-                    new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Empty Cart");
-            alert.setHeaderText(null);
-            alert.setContentText("There is nothing to pay for.");
-            alert.showAndWait();
-            return;
-        }
 
-        final Alert confirm =
-                new Alert(Alert.AlertType.INFORMATION);
-        confirm.setTitle("Payment");
-        confirm.setHeaderText(null);
-        confirm.setContentText("Payment processed. Thank you!");
-        confirm.showAndWait();
-
-        cartList.getItems().clear();
-        totalLabel.setText("Total: $0.00");
     }
 
     private void populateMenuList(){
