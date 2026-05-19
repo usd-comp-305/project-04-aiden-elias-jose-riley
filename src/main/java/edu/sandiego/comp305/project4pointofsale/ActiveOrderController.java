@@ -28,6 +28,8 @@ public class ActiveOrderController {
 
     private Order order;
 
+    private final POSSystem posSystem = new POSSystem();
+
     @FXML
     private void handleBack() throws IOException{
         final Stage stage = (Stage) root.getScene().getWindow();
@@ -65,6 +67,14 @@ public class ActiveOrderController {
 
     @FXML
     private void handleSendToKitchen(){
+        if (order.getSentItemCount() == order.getItems().size()) {
+            return;
+        }
+
+        final Order ticketOrder = createOrderForUnsentItems();
+        posSystem.placeOrder(ticketOrder);
+        order.markItemsAsSent();
+        refreshCart();
     }
 
     @FXML
@@ -87,5 +97,13 @@ public class ActiveOrderController {
         cartList.getItems().setAll(order.getItems());
         final double total = Math.round(order.calculateTotal() * 100.0) / 100.0;
         totalLabel.setText("Total: $" + total);
+    }
+
+    private Order createOrderForUnsentItems() {
+        final Order ticketOrder = new Order(order.getOrderId(), currentServer);
+        for (int i = order.getSentItemCount(); i < order.getItems().size(); i++) {
+            ticketOrder.addItem(order.getItems().get(i));
+        }
+        return ticketOrder;
     }
 }

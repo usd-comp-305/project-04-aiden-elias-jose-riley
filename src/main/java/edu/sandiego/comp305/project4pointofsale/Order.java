@@ -43,7 +43,7 @@ public class Order {
         return this.serverName;
     }
 
-    public int getSentCount() {
+    public int getSentItemCount() {
         return sentItemCount;
     }
 
