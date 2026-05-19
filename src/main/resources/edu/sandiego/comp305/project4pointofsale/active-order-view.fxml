@@ -4,7 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Button?>
 
-<VBox alignment="CENTER" spacing="20"
+<VBox fx:id="root" alignment="CENTER" spacing="20"
       xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="edu.sandiego.comp305.project4pointofsale.ActiveOrderController"
