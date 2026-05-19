@@ -1,61 +1,58 @@
 package edu.sandiego.comp305.project4pointofsale;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class InventoryTest {
-    private static List<Ingredient> sampleInventory;
 
-    @BeforeAll
-    public static void makeSampleInventory(){
-        sampleInventory = new ArrayList<>();
+    @Test
+    void getIngredientQuantity() {
+        Inventory.restockIngredients(100);
+        final Ingredient ingredient =
+                IngredientRepository.getIngredientOptions().get(0);
 
+        final int quantity = Inventory.getIngredientQuantity(ingredient);
 
+        assertEquals(100, quantity);
     }
 
     @Test
-    public void checkInventoryTest(){
-        List<Ingredient> ingredientsContained = sampleInventory;
-        List<Ingredient> restockIngredients = new ArrayList<>();
+    void restockIngredients() {
+        Inventory.restockIngredients(50);
+        final Ingredient ingredient =
+                IngredientRepository.getIngredientOptions().get(0);
 
-        Inventory inv = new Inventory(ingredientsContained, restockIngredients);
-
-
+        assertEquals(50, Inventory.getIngredientQuantity(ingredient));
     }
 
     @Test
-    public void restockInventoryTest(){
-        List<Ingredient> ingredientsContained = sampleInventory;
-        List<Ingredient> restockIngredients = sampleInventory;
-
-        Inventory inv = new Inventory(ingredientsContained, restockIngredients);
+    void restockIngredientsNegativeThrows() {
+        assertThrows(IllegalArgumentException.class,
+                () -> Inventory.restockIngredients(-1));
     }
 
     @Test
-    public void restockNothingTest(){
-        List<Ingredient> ingredientsContained = sampleInventory;
-        List<Ingredient> restockIngredients = new ArrayList<>();
+    void takeIngredient() {
+        Inventory.restockIngredients(100);
+        final Ingredient ingredient =
+                IngredientRepository.getIngredientOptions().get(0);
 
-        Inventory inv = new Inventory(ingredientsContained, restockIngredients);
+        final boolean taken = Inventory.takeIngredient(ingredient, 10);
+
+        assertTrue(taken);
+        assertEquals(90, Inventory.getIngredientQuantity(ingredient));
     }
 
     @Test
-    public void checkEmptyInventoryTest(){
-        List<Ingredient> ingredientsContained = new ArrayList<>();
-        List<Ingredient> restockIngredients = new ArrayList<>();
+    void takeIngredientInsufficientStock() {
+        Inventory.restockIngredients(5);
+        final Ingredient ingredient =
+                IngredientRepository.getIngredientOptions().get(0);
 
-        Inventory inv = new Inventory(ingredientsContained, restockIngredients);
-    }
+        final boolean taken = Inventory.takeIngredient(ingredient, 10);
 
-    @Test
-    public void initializeEmptyParamsTest(){
-        List<Ingredient> ingredientsContained = new ArrayList<>();
-        List<Ingredient> restockIngredients = new ArrayList<>();
-
-        Assertions.assertDoesNotThrow(() -> {new Inventory(ingredientsContained, restockIngredients);});
+        assertFalse(taken);
+        assertEquals(5, Inventory.getIngredientQuantity(ingredient));
     }
 }
