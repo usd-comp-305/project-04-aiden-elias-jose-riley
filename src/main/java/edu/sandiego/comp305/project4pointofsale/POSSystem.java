@@ -56,6 +56,7 @@ public class POSSystem {
     }
 
     public double getProfit(){
-        return BankAccount.getAccountBalance()-BankAccount.STANDARD_STARTING_BALANCE;
+        return BankAccount.getAccountBalance()
+                -BankAccount.STANDARD_STARTING_BALANCE;
     }
 }
