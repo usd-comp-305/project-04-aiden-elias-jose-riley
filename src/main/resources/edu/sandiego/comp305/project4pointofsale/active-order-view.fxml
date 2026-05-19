@@ -22,7 +22,10 @@
     </left>
 
     <center>
-
+        <VBox spacing="10" alignment="CENTER">
+            <ListView fx:id="cartList" VBox.vgrow="ALWAYS" />
+            <Label fx:id="totalLabel" text="Total: $0.00" />
+        </VBox>
     </center>
 
     <bottom>

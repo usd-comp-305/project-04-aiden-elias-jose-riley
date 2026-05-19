@@ -1,6 +1,7 @@
 package edu.sandiego.comp305.project4pointofsale;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.scene.control.ListView;
@@ -14,6 +15,12 @@ public class ActiveOrderController {
 
     @FXML
     private ListView menuList;
+
+    @FXML
+    private ListView cartList;
+
+    @FXML
+    private Label totalLabel;
 
     @FXML
     private void handleBack() throws IOException{
