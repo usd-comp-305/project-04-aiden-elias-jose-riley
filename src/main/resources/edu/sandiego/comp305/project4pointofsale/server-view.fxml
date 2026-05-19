@@ -20,7 +20,6 @@
     <bottom>
         <HBox spacing="10" alignment="CENTER">
             <Button text="Logout" onAction="#handleLogout" />
-            <Button text="New Order" onAction="#handleNewOrder" />
         </HBox>
     </bottom>
 </BorderPane>

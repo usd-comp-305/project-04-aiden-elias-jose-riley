@@ -10,6 +10,7 @@ module edu.sandiego.comp305.project4pointofsale {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires java.desktop;
 
     opens edu.sandiego.comp305.project4pointofsale to javafx.fxml;
     exports edu.sandiego.comp305.project4pointofsale;
