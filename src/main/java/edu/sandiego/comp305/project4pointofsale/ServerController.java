@@ -13,7 +13,8 @@ public class ServerController {
 
     @FXML
     private void handleLogout() throws IOException {
-        Stage stage = (Stage) ordersList.getScene().getWindow();
-        SceneManager.switchScene(stage, "login-view.fxml", "Restaurant POS Login");
+        final Stage stage = (Stage) ordersList.getScene().getWindow();
+        SceneManager.switchScene(stage, "login-view.fxml",
+                "Restaurant POS Login");
     }
 }
