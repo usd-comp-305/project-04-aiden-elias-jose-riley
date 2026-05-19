@@ -22,4 +22,11 @@ public class ServerController {
     public void initialize() {
         ordersList.setPlaceholder(new Label("No open orders"));
     }
+
+    @FXML
+    private void handleNewOrder() throws IOException {
+        final Stage stage = (Stage) ordersList.getScene().getWindow();
+        SceneManager.switchScene(stage, "active-order-view.fxml",
+                "Active Order Dashboard");
+    }
 }
