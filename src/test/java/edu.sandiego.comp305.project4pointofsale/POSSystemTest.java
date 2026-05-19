@@ -7,11 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class POSSystemTest {
 
-    @BeforeEach
-    void resetIncome(){
-        Inventory.resetIncome();
-    }
-
     @Test
     void createOrderWithIds() {
         final POSSystem pos = new POSSystem();
