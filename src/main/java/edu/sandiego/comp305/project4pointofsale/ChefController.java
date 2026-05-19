@@ -14,8 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ChefController {
-    public static final POSSystem
-            POS_SYSTEM = new POSSystem();
+    private static final POSSystem
+            POS_SYSTEM = ActiveOrderController.SHARED_POS_SYSTEM;
 
     // hard coded until login is set up
     private final Chef currentChef =

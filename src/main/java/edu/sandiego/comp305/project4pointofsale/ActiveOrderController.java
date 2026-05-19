@@ -29,7 +29,7 @@ public class ActiveOrderController {
 
     private Order order;
 
-    private final POSSystem posSystem = new POSSystem();
+    public static final POSSystem SHARED_POS_SYSTEM = new POSSystem();
 
     @FXML
     private void handleBack() throws IOException{
@@ -77,7 +77,7 @@ public class ActiveOrderController {
         }
 
         final Order ticketOrder = createOrderForUnsentItems();
-        posSystem.placeOrder(ticketOrder);
+        SHARED_POS_SYSTEM.placeOrder(ticketOrder);
         order.markItemsAsSent();
         refreshCart();
     }
