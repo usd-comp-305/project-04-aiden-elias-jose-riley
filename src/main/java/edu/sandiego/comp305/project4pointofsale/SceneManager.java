@@ -24,10 +24,14 @@ public class SceneManager {
         }
 
         final FXMLLoader loader = new FXMLLoader(fxmlLocation);
-        final Scene scene = new Scene(loader.load(), 600, 400);
+        if (stage.getScene() == null){
+            final Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+        } else {
+            stage.getScene().setRoot(loader.load());
+        }
 
         stage.setTitle(title);
-        stage.setScene(scene);
         stage.show();
     }
 }

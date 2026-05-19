@@ -11,7 +11,8 @@
             xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="edu.sandiego.comp305.project4pointofsale.ActiveOrderController"
-            prefWidth="800" prefHeight="500">
+            prefWidth="800" prefHeight="500"
+            minWidth="700" minHeight="450">
 
     <top>
         <Label text="Active Order" BorderPane.alignment="CENTER" />

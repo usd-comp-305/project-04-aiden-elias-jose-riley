@@ -14,13 +14,19 @@ public class ActiveOrderController {
     private BorderPane root;
 
     @FXML
-    private ListView menuList;
+    private ListView<MenuItem> menuList;
 
     @FXML
-    private ListView cartList;
+    private ListView<MenuItem> cartList;
 
     @FXML
     private Label totalLabel;
+
+    /* TODO: replace with actual logged-in server, deferred to session
+      management PR (will be implemented later) */
+    private final Server currentServer = new Server(1, "Elias", "1234");
+
+    private Order order;
 
     @FXML
     private void handleBack() throws IOException{
@@ -30,11 +36,31 @@ public class ActiveOrderController {
     }
 
     @FXML
+    private void initialize() {
+        order = new Order(1, currentServer);
+        populateMenuList();
+    }
+
+    @FXML
     private void handleAddItem(){
+        final MenuItem selectedItem =
+                menuList.getSelectionModel().getSelectedItem();
+        if (selectedItem == null) {
+            return;
+        }
+        order.addItem(selectedItem);
+        refreshCart();
     }
 
     @FXML
     private void handleRemoveItem(){
+        final MenuItem selectedItem =
+                cartList.getSelectionModel().getSelectedItem();
+        if (selectedItem == null){
+            return;
+        }
+        order.removeItem(selectedItem);
+        refreshCart();
     }
 
     @FXML
@@ -43,5 +69,23 @@ public class ActiveOrderController {
 
     @FXML
     private void handlePay(){
+    }
+
+    private void populateMenuList(){
+        addMealsFromFactory(new RegularMealFactory());
+        addMealsFromFactory(new VeganMealFactory());
+        addMealsFromFactory(new GlutenFreeMealFactory());
+    }
+
+    private void addMealsFromFactory(final MealFactory factory){
+        menuList.getItems().add(factory.createBurger());
+        menuList.getItems().add(factory.createSteak());
+        menuList.getItems().add(factory.createPasta());
+    }
+
+    private void refreshCart(){
+        cartList.getItems().setAll(order.getItems());
+        final double total = Math.round(order.calculateTotal() * 100.0) / 100.0;
+        totalLabel.setText("Total: $" + total);
     }
 }

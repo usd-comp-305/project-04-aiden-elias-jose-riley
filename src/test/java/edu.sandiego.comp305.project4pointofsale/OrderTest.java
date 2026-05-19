@@ -10,6 +10,59 @@ import static org.junit.jupiter.api.Assertions.*;
 class OrderTest {
 
     @Test
+    void removeItemLeavesCartEmpty(){
+        final Server server = new Server(2, "elias", "hello");
+        final Order order = new Order(1, server);
+        final MenuItem menuItem = new VeganBurger();
+
+        order.addItem(menuItem);
+        order.removeItem(menuItem);
+
+        assertTrue(order.getItems().isEmpty());
+    }
+
+    @Test
+    void removeItemWithDuplicatesLeavesOne(){
+        final Server server = new Server(2, "elias", "hello");
+        final Order order = new Order(1, server);
+        final MenuItem menuItem = new VeganBurger();
+
+        order.addItem(menuItem);
+        order.addItem(menuItem);
+        order.removeItem(menuItem);
+
+        assertEquals(1, order.getItems().size());
+    }
+
+    @Test
+    void removeItemUpdatesTotal(){
+        final Server server = new Server(2, "elias", "hello");
+        final Order order = new Order(1, server);
+        final MenuItem veganBurger = new VeganBurger();
+        final MenuItem regularBurger = new RegularBurger();
+
+        order.addItem(veganBurger);
+        order.addItem(regularBurger);
+        order.removeItem(veganBurger);
+
+        assertEquals(13.99, order.calculateTotal());
+    }
+
+    @Test
+    void removeItemNotInCartThrowsException(){
+        final Server server = new Server(2, "elias", "hello");
+        final Order order = new Order(1, server);
+        final MenuItem menuItem = new VeganBurger();
+
+        try {
+            order.removeItem(menuItem);
+            fail("Expected IllegalArgumentException to be thrown");
+        } catch (IllegalArgumentException e) {
+
+        }
+    }
+
+    @Test
     void getOrderInfoFromConstructor() {
         final Server server = new Server(2, "elias", "hello");
         final Order order = new Order(1, server);
