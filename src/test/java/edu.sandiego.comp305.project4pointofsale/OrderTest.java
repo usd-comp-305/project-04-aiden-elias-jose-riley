@@ -22,6 +22,21 @@ class OrderTest {
     }
 
     @Test
+    void removeItemWithDuplicatesLeavesOne(){
+
+    }
+
+    @Test
+    void removeItemUpdatesTotal(){
+
+    }
+
+    @Test
+    void removeItemNotInCartThrowsException(){
+
+    }
+
+    @Test
     void getOrderInfoFromConstructor() {
         final Server server = new Server(2, "elias", "hello");
         final Order order = new Order(1, server);
