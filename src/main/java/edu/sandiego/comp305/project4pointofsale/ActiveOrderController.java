@@ -1,7 +1,7 @@
 package edu.sandiego.comp305.project4pointofsale;
 
 import javafx.fxml.FXML;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -9,7 +9,7 @@ import java.io.IOException;
 public class ActiveOrderController {
 
     @FXML
-    private VBox root;
+    private BorderPane root;
 
     @FXML
     private void handleBack() throws IOException{
