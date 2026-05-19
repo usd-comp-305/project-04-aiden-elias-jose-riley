@@ -84,6 +84,7 @@ public class ActiveOrderController {
 
     @FXML
     private void handlePay(){
+
     }
 
     private void populateMenuList(){

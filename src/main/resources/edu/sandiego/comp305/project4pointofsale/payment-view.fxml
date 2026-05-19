@@ -2,7 +2,8 @@
 
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns="http://javafx.com/javafx"
+<VBox fx:id="root"
+      xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="edu.sandiego.comp305.project4pointofsale.PaymentController"
       spacing="15"
