@@ -22,7 +22,8 @@ public class ActiveOrderController {
     @FXML
     private Label totalLabel;
 
-    // TODO: replace with actual logged-in server, deferred to session management PR (will be implemented later)
+    /* TODO: replace with actual logged-in server, deferred to session
+      management PR (will be implemented later) */
     private final Server currentServer = new Server(1, "Elias", "1234");
 
     private Order order;
