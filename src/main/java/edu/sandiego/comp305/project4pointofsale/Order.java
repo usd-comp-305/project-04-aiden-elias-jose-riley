@@ -19,6 +19,7 @@ public class Order {
         this.serverId = order.serverId;
         this.serverName = order.serverName;
         this.items = new ArrayList<>(order.items);
+        this.sentCount = order.sentCount;
     }
 
     public Order(final int orderId, final Server server){
@@ -26,6 +27,7 @@ public class Order {
         this.serverId = server.getId();
         this.serverName = server.getName();
         this.items = new ArrayList<>();
+        this.sentCount = 0;
     }
 
 
