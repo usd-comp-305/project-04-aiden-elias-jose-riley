@@ -119,17 +119,62 @@ class OrderTest {
 
     @Test
     void removeItemAfterMarkingAsSentThrowsException(){
+        final Server server = new Server(2, "elias", "hello");
+        final Order order = new Order(1, server);
+        final MenuItem menuItem = new VeganBurger();
+
+        order.addItem(menuItem);
+        order.markItemsAsSent();
+
+        try{
+            order.removeItem(menuItem);
+            fail("Expected IllegalArgumentException to be thrown");
+        }catch (IllegalArgumentException e){
+
+        }
     }
 
     @Test
     void removeItemAddedAfterMarkAsSentWorks(){
+        final Server server = new Server(2, "elias", "hello");
+        final Order order = new Order(1, server);
+        final MenuItem firstItem = new VeganBurger();
+        final MenuItem secondItem = new RegularBurger();
+
+        order.addItem(firstItem);
+        order.markItemsAsSent();
+        order.addItem(secondItem);
+        order.removeItem(secondItem);
+
+        assertEquals(1, order.getItems().size());
     }
 
     @Test
     void removeItemWithSentAndNonSentDuplicateRemovesNonSent(){
+        final Server server = new Server(2, "elias", "hello");
+        final Order order = new Order(1, server);
+        final MenuItem firstBurger = new VeganBurger();
+        final MenuItem secondBurger = new VeganBurger();
+
+        order.addItem(firstBurger);
+        order.markItemsAsSent();
+        order.addItem(secondBurger);
+        order.removeItem(secondBurger);
+
+        assertEquals(1, order.getItems().size());
     }
 
     @Test
     void getItemsReturnsAllItemsIncludingSent(){
+        final Server server = new Server(2, "elias", "hello");
+        final Order order = new Order(1, server);
+        final MenuItem firstItem = new VeganBurger();
+        final MenuItem secondItem = new RegularBurger();
+
+        order.addItem(firstItem);
+        order.markItemsAsSent();
+        order.addItem(secondItem);
+
+        assertEquals(2, order.getItems().size());
     }
 }
