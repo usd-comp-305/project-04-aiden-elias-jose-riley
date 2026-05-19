@@ -5,6 +5,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.scene.control.ListView;
+import java.util.List;
 
 import java.io.IOException;
 
@@ -17,7 +18,7 @@ public class ActiveOrderController {
     private ListView<MenuItem> menuList;
 
     @FXML
-    private ListView<MenuItem> cartList;
+    private ListView<String> cartList;
 
     @FXML
     private Label totalLabel;
@@ -56,13 +57,16 @@ public class ActiveOrderController {
 
     @FXML
     private void handleRemoveItem(){
-        final MenuItem selectedItem =
-                cartList.getSelectionModel().getSelectedItem();
-        if (selectedItem == null){
+        final int selectedIndex = cartList.getSelectionModel().getSelectedIndex();
+        if (selectedIndex == -1) {
             return;
         }
-        order.removeItem(selectedItem);
-        refreshCart();
+        try {
+            order.removeItem(order.getItems().get(selectedIndex));
+            refreshCart();
+        } catch (IllegalArgumentException e) {
+
+        }
     }
 
     @FXML
@@ -94,7 +98,15 @@ public class ActiveOrderController {
     }
 
     private void refreshCart(){
-        cartList.getItems().setAll(order.getItems());
+        cartList.getItems().clear();
+        final List<MenuItem> items = order.getItems();
+        for(int i = 0; i < items.size(); i++){
+            String displayText = items.get(i).toString();
+            if(i < order.getSentItemCount()){
+                displayText = displayText + " (sent)";
+            }
+            cartList.getItems().add(displayText);
+        }
         final double total = Math.round(order.calculateTotal() * 100.0) / 100.0;
         totalLabel.setText("Total: $" + total);
     }
