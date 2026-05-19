@@ -43,6 +43,9 @@ public class Order {
         return this.serverName;
     }
 
+    public int getSentCount() {
+        return sentItemCount;
+    }
 
     public void addItem(final MenuItem item){
         items.add(item);
@@ -72,6 +75,7 @@ public class Order {
         throw new IllegalArgumentException("item not in cart or already sent");
     }
 
-    public void markItemsAsSent() {
+    public void markItemsAsSent(){
+        sentItemCount = items.size();
     }
 }
