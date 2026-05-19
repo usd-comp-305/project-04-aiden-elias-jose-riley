@@ -22,11 +22,22 @@ public class ActiveOrderController {
     @FXML
     private Label totalLabel;
 
+    // TODO: replace with actual logged-in server, deferred to session management PR (will be implemented later)
+    private final Server currentServer = new Server(1, "Elias", "1234");
+
+    private Order order;
+
     @FXML
     private void handleBack() throws IOException{
         final Stage stage = (Stage) root.getScene().getWindow();
         SceneManager.switchScene(stage, "server-view.fxml",
                 "Server Dashboard");
+    }
+
+    @FXML
+    private void initialize() {
+        order = new Order(1, currentServer);
+        populateMenuList();
     }
 
     @FXML
@@ -43,5 +54,17 @@ public class ActiveOrderController {
 
     @FXML
     private void handlePay(){
+    }
+
+    private void populateMenuList(){
+        addMealsFromFactory(new RegularMealFactory());
+        addMealsFromFactory(new VeganMealFactory());
+        addMealsFromFactory(new GlutenFreeMealFactory());
+    }
+
+    private void addMealsFromFactory(final MealFactory factory){
+        menuList.getItems().add(factory.createBurger());
+        menuList.getItems().add(factory.createSteak());
+        menuList.getItems().add(factory.createPasta());
     }
 }
