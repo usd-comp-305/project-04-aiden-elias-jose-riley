@@ -57,4 +57,10 @@ public class Order {
 
         return total;
     }
+
+    public void removeItem(final MenuItem item){
+        if (!items.remove(item)) {
+            throw new IllegalArgumentException("item not in cart");
+        }
+    }
 }

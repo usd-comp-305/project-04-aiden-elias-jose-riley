@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER"
+      spacing="20"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="edu.sandiego.comp305.project4pointofsale.ChefController">
+
+    <Label text="Chef Dashboard" />
+
+    <Button text="Start Ticket" />
+
+    <Button text="Mark Ready" />
+
+    <Button text="Mark Delivered" />
+
+</VBox>

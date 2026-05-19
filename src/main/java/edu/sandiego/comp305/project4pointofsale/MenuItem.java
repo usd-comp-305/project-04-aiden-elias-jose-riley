@@ -67,4 +67,12 @@ public abstract class MenuItem {
     public int hashCode() {
         return Objects.hash(description, ingredients, cost);
     }
+
+    @Override
+    public String toString() {
+        final String className = this.getClass().getSimpleName();
+        final String formatted = className.replaceAll("([a-z])([A-Z])",
+                "$1 $2");
+        return formatted + " - $" + cost;
+    }
 }

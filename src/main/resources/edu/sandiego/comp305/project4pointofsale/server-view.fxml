@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Button?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="edu.sandiego.comp305.project4pointofsale.ServerController"
+            prefWidth="600" prefHeight="400">
+    <top>
+        <Label text="Open Orders"
+               BorderPane.alignment="CENTER"/>
+    </top>
+    <center>
+        <ListView fx:id="ordersList">
+            <placeholder>
+                <Label text="No open orders" />
+            </placeholder>
+        </ListView>
+    </center>
+    <bottom>
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Logout" onAction="#handleLogout" />
+            <Button text="New Order" onAction="#handleNewOrder" />
+        </HBox>
+    </bottom>
+</BorderPane>
