@@ -67,4 +67,9 @@ public abstract class MenuItem {
     public int hashCode() {
         return Objects.hash(description, ingredients, cost);
     }
+
+    @Override
+    public String toString() {
+        return description + " - $" + cost;
+    }
 }
