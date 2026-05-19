@@ -43,6 +43,12 @@ public class ActiveOrderController {
 
     @FXML
     private void handleAddItem(){
+        final MenuItem selectedItem = menuList.getSelectionModel().getSelectedItem();
+        if (selectedItem == null) {
+            return;
+        }
+        order.addItem(selectedItem);
+        refreshCart();
     }
 
     @FXML
@@ -67,5 +73,11 @@ public class ActiveOrderController {
         menuList.getItems().add(factory.createBurger());
         menuList.getItems().add(factory.createSteak());
         menuList.getItems().add(factory.createPasta());
+    }
+
+    private void refreshCart(){
+        cartList.getItems().setAll(order.getItems());
+        double total = Math.round(order.calculateTotal() * 100.0) / 100.0;
+        totalLabel.setText("Total: $" + total);
     }
 }
