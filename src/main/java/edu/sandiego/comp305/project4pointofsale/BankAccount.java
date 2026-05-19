@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class BankAccount {
-    private static final double STANDARD_STARTING_BALANCE
+    public static final double STANDARD_STARTING_BALANCE
             = 5000.00;
 
     private static final double[] BASE_EMPLOYEE_SALARIES_FOR_DAY

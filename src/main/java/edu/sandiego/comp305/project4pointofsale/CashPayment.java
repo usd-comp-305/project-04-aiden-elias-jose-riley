@@ -12,12 +12,10 @@ public class CashPayment implements PaymentMethod {
 
     @Override
     public boolean pay(final double amount) {
-        if (cashReceived >= amount) {
-            amountPaid = amount;
-            Inventory.addIncome(amount);
+        if (cashReceived >= amount){
+            amountPaid += amount;
             return true;
         }
-
         return false;
     }
 

@@ -102,4 +102,11 @@ public class IngredientRepository {
 
         return sum;
     }
+
+    public static List<Ingredient> getIngredientOptions() {
+        verifyInstantiation();
+        final List<Ingredient> ingredientOptions = new ArrayList<>();
+        ingredientOptions.addAll(possibleIngredients);
+        return ingredientOptions;
+    }
 }

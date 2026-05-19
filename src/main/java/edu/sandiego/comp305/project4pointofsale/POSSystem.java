@@ -35,7 +35,7 @@ public class POSSystem {
         final KitchenTicket ticket = generateTicket(placedOrder);
         placedKitchenTickets.add(ticket);
 
-        Inventory.addIncome(placedOrder.calculateTotal());
+        BankAccount.addIncome(placedOrder.calculateTotal());
     }
 
     public KitchenTicket generateTicket(final Order placedOrder){
@@ -56,6 +56,7 @@ public class POSSystem {
     }
 
     public double getProfit(){
-        return Inventory.getIncome();
+        return BankAccount.getAccountBalance()
+                -BankAccount.STANDARD_STARTING_BALANCE;
     }
 }
