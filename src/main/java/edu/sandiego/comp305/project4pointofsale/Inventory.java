@@ -15,25 +15,34 @@ public class Inventory {
     }
 
     static {
-        ingredientQuantities = populateIngredients();
+        ingredientQuantities = new HashMap<>();
+        populateIngredients();
     }
 
-    private static void populateIngredientsWithStandardAmount() {
-        final Map<Ingredient, Integer> newIQ = new HashMap<>();
-        for(Ingredient i : IngredientRepository.getIngredientOptions()) {
-            ingredientQuantities.put(i,STANDARD_NUMBER_OF_STARTING_INGREDIENTS);
+    private static void populateIngredients() {
+        restockIngredients(STANDARD_NUMBER_OF_STARTING_INGREDIENTS);
+    }
+
+    public static int getIngredientQuantity(final Ingredient ingredient) {
+        if (!ingredientQuantities.containsKey(ingredient)) {
+            return 0;
         }
-        ingredientQuantities = newIQ;
+        return ingredientQuantities.get(ingredient);
     }
 
-    private static void restockIngredients(final int num) {
-        for(Ingredient i : IngredientRepository.getIngredientOptions()) {
-            ingredientQuantities.put(i,STANDARD_NUMBER_OF_STARTING_INGREDIENTS);
+    public static void restockIngredients(final int quantity) {
+        if (quantity < 0) {
+            throw new IllegalArgumentException(
+                    "Restock quantity cannot be negative: " + quantity);
         }
-        ingredientQuantities = newIQ;
+        for (Ingredient i :
+                IngredientRepository.getIngredientOptions()) {
+            ingredientQuantities.put(i, quantity);
+        }
     }
 
-    public boolean takeIngredient(final Ingredient ingredient, final int quantity) {
+    public boolean takeIngredient(final Ingredient ingredient,
+                                  final int quantity) {
         if(ingredientQuantities.containsKey(ingredient)) {
             final int currentStock = ingredientQuantities.get(ingredient);
 
