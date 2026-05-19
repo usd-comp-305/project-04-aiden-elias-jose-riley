@@ -48,7 +48,8 @@ public class Inventory {
             final int currentStock = INGREDIENT_QUANTITY_MAP.get(ingredient);
 
             if(currentStock >= quantity) {
-                INGREDIENT_QUANTITY_MAP.put(ingredient, currentStock - quantity);
+                INGREDIENT_QUANTITY_MAP.put(
+                        ingredient, currentStock - quantity);
                 return true;
             }
         }
