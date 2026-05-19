@@ -17,6 +17,10 @@ public class HelloApplication extends Application {
 
         stage.setTitle("Restaurant POS Login!");
         stage.setScene(scene);
+        stage.setWidth(800);
+        stage.setHeight(550);
+        stage.setMinWidth(700);
+        stage.setMinHeight(500);
         stage.show();
     }
 }
