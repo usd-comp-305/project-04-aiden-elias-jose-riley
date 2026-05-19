@@ -57,7 +57,8 @@ public class ActiveOrderController {
 
     @FXML
     private void handleRemoveItem(){
-        final int selectedIndex = cartList.getSelectionModel().getSelectedIndex();
+        final int selectedIndex = cartList.getSelectionModel()
+                .getSelectedIndex();
         if (selectedIndex == -1) {
             return;
         }
@@ -113,7 +114,8 @@ public class ActiveOrderController {
 
     private Order createOrderForUnsentItems() {
         final Order ticketOrder = new Order(order.getOrderId(), currentServer);
-        for (int i = order.getSentItemCount(); i < order.getItems().size(); i++) {
+        for (int i = order.getSentItemCount();
+             i < order.getItems().size(); i++) {
             ticketOrder.addItem(order.getItems().get(i));
         }
         return ticketOrder;
