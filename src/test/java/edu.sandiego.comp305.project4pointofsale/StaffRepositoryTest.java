@@ -42,6 +42,15 @@ class StaffRepositoryTest {
         assertNull(staff);
     }
 
+    @Test
+    void countDefaultStaffInRepo() {
+        final StaffRepository repository = new StaffRepository();
+
+        final int[] staffCount = repository.getRoleCounts();
+
+        assertEquals(2, staffCount[0]);
+        assertEquals(2, staffCount[1]);
+    }
 
 
 }
