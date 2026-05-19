@@ -59,7 +59,7 @@ public class PaymentController {
     }
 
     public void setOrder(final Order order){
-        this.order = order;
+        this.order = new Order(order);
         final double total = Math.round(
                 order.calculateTotal() * 100.0) / 100.0;
         totalLabel.setText("Total: $" + total);
