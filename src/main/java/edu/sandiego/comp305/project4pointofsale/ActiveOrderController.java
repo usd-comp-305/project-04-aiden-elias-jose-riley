@@ -6,6 +6,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.scene.control.ListView;
 import java.util.List;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 
 import java.io.IOException;
 
@@ -83,8 +85,11 @@ public class ActiveOrderController {
     }
 
     @FXML
-    private void handlePay(){
-
+    private void handlePay() throws IOException {
+        final Stage stage = (Stage) root.getScene().getWindow();
+        final PaymentController controller = SceneManager.switchScene(
+                stage, "payment-view.fxml", "Payment");
+        controller.setOrder(order);
     }
 
     private void populateMenuList(){
