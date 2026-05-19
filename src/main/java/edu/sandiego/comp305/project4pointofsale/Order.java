@@ -57,4 +57,7 @@ public class Order {
 
         return total;
     }
+
+    public void removeItem(MenuItem menuItem){
+    }
 }

@@ -10,6 +10,18 @@ import static org.junit.jupiter.api.Assertions.*;
 class OrderTest {
 
     @Test
+    void removeItemLeavesCartEmpty(){
+        final Server server = new Server(2, "elias", "hello");
+        final Order order = new Order(1, server);
+        final MenuItem menuItem = new VeganBurger();
+
+        order.addItem(menuItem);
+        order.removeItem(menuItem);
+
+        assertTrue(order.getItems().isEmpty());
+    }
+
+    @Test
     void getOrderInfoFromConstructor() {
         final Server server = new Server(2, "elias", "hello");
         final Order order = new Order(1, server);
