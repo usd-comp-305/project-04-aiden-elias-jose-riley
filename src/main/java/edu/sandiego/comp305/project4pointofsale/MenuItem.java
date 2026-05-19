@@ -70,6 +70,8 @@ public abstract class MenuItem {
 
     @Override
     public String toString() {
-        return description + " - $" + cost;
+        final String className = this.getClass().getSimpleName();
+        final String formatted = className.replaceAll("([a-z])([A-Z])", "$1 $2");
+        return formatted + " - $" + cost;
     }
 }
