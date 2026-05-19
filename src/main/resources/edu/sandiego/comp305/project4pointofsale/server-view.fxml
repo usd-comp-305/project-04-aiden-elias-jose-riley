@@ -15,7 +15,11 @@
                BorderPane.alignment="CENTER"/>
     </top>
     <center>
-
+        <ListView fx:id="ordersList">
+            <placeholder>
+                <Label text="No open orders" />
+            </placeholder>
+        </ListView>
     </center>
     <bottom>
         <HBox spacing="10" alignment="CENTER">

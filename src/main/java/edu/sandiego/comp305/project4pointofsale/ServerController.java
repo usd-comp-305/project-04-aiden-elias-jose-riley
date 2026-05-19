@@ -1,6 +1,7 @@
 package edu.sandiego.comp305.project4pointofsale;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.scene.control.ListView;
 
@@ -16,5 +17,9 @@ public class ServerController {
         final Stage stage = (Stage) ordersList.getScene().getWindow();
         SceneManager.switchScene(stage, "login-view.fxml",
                 "Restaurant POS Login");
+    }
+
+    public void initialize() {
+        ordersList.setPlaceholder(new Label("No open orders"));
     }
 }
