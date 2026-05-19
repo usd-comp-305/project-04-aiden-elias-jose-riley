@@ -8,14 +8,15 @@ public class Inventory {
     private static final int
             STANDARD_NUMBER_OF_STARTING_INGREDIENTS = 100;
 
-    private static Map<Ingredient, Integer> ingredientQuantities;
+    // all caps to cooperate with checkstyle
+    private static final Map<Ingredient, Integer>
+            INGREDIENT_QUANTITY_MAP = new HashMap<>();
 
     private Inventory() {
 
     }
 
     static {
-        ingredientQuantities = new HashMap<>();
         populateIngredients();
     }
 
@@ -24,10 +25,10 @@ public class Inventory {
     }
 
     public static int getIngredientQuantity(final Ingredient ingredient) {
-        if (!ingredientQuantities.containsKey(ingredient)) {
+        if (!INGREDIENT_QUANTITY_MAP.containsKey(ingredient)) {
             return 0;
         }
-        return ingredientQuantities.get(ingredient);
+        return INGREDIENT_QUANTITY_MAP.get(ingredient);
     }
 
     public static void restockIngredients(final int quantity) {
@@ -37,17 +38,17 @@ public class Inventory {
         }
         for (Ingredient i :
                 IngredientRepository.getIngredientOptions()) {
-            ingredientQuantities.put(i, quantity);
+            INGREDIENT_QUANTITY_MAP.put(i, quantity);
         }
     }
 
-    public boolean takeIngredient(final Ingredient ingredient,
-                                  final int quantity) {
-        if(ingredientQuantities.containsKey(ingredient)) {
-            final int currentStock = ingredientQuantities.get(ingredient);
+    public static boolean takeIngredient(final Ingredient ingredient,
+                                         final int quantity) {
+        if(INGREDIENT_QUANTITY_MAP.containsKey(ingredient)) {
+            final int currentStock = INGREDIENT_QUANTITY_MAP.get(ingredient);
 
             if(currentStock >= quantity) {
-                ingredientQuantities.put(ingredient, currentStock - quantity);
+                INGREDIENT_QUANTITY_MAP.put(ingredient, currentStock - quantity);
                 return true;
             }
         }
