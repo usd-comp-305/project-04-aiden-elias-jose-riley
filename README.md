@@ -56,6 +56,8 @@ special run configuration. To edit run configurations:
     1. Click the dropdown next to the run buttons and hit "Edit Configurations"
     2. Under "Build and Run" select the dropdown menu to the right of the title that says "Modify options"
     3. In the VM options line put the following:
-    4. "--module-path "/Users/aidendomingo/Downloads/javafx-sdk-21.0.11/lib" --add-modules javafx.controls,javafx.fxml,javafx.media,javafx.web,javafx.swing"
-    5. Make sure that it was not copied in with the quotation marks on the very outside and change the directory to wherever you downloaded JavaFX SDK 21 (also make sure it is specifically to the "lib" folder of the unzipped download)
+    4. "--module-path "/YOUR_DIRECTORY/javafx-sdk-21.0.11/lib" --add-modules javafx.controls,javafx.fxml,javafx.media,javafx.web,javafx.swing"
+    5. Make sure that it was not copied in with the quotation marks on the very outside and change the 
+   directory to wherever you downloaded JavaFX SDK 21 (also make sure it is specifically to the "lib" folder 
+   of the unzipped download)
 
