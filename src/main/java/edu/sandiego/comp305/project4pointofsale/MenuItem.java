@@ -71,7 +71,8 @@ public abstract class MenuItem {
     @Override
     public String toString() {
         final String className = this.getClass().getSimpleName();
-        final String formatted = className.replaceAll("([a-z])([A-Z])", "$1 $2");
+        final String formatted = className.replaceAll("([a-z])([A-Z])",
+                "$1 $2");
         return formatted + " - $" + cost;
     }
 }
