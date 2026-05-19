@@ -12,11 +12,14 @@ public class Order {
 
     private final List<MenuItem> items;
 
+    private int sentItemCount;
+
     public Order(final Order order) {
         this.orderId = order.orderId;
         this.serverId = order.serverId;
         this.serverName = order.serverName;
         this.items = new ArrayList<>(order.items);
+        this.sentItemCount = order.sentItemCount;
     }
 
     public Order(final int orderId, final Server server){
@@ -24,6 +27,7 @@ public class Order {
         this.serverId = server.getId();
         this.serverName = server.getName();
         this.items = new ArrayList<>();
+        this.sentItemCount = 0;
     }
 
 
@@ -39,6 +43,9 @@ public class Order {
         return this.serverName;
     }
 
+    public int getSentItemCount() {
+        return sentItemCount;
+    }
 
     public void addItem(final MenuItem item){
         items.add(item);
@@ -59,8 +66,16 @@ public class Order {
     }
 
     public void removeItem(final MenuItem item){
-        if (!items.remove(item)) {
-            throw new IllegalArgumentException("item not in cart");
+        for (int i = sentItemCount; i < items.size(); i++) {
+            if (items.get(i).equals(item)) {
+                items.remove(i);
+                return;
+            }
         }
+        throw new IllegalArgumentException("item not in cart or already sent");
+    }
+
+    public void markItemsAsSent(){
+        sentItemCount = items.size();
     }
 }

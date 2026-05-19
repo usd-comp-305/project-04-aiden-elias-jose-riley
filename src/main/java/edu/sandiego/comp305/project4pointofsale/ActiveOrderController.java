@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.scene.control.ListView;
+import java.util.List;
 
 import java.io.IOException;
 
@@ -19,7 +20,7 @@ public class ActiveOrderController {
     private ListView<MenuItem> menuList;
 
     @FXML
-    private ListView<MenuItem> cartList;
+    private ListView<String> cartList;
 
     @FXML
     private Label totalLabel;
@@ -29,6 +30,8 @@ public class ActiveOrderController {
     private final Server currentServer = new Server(1, "Elias", "1234");
 
     private Order order;
+
+    private final POSSystem posSystem = new POSSystem();
 
     @FXML
     private void handleBack() throws IOException{
@@ -56,13 +59,17 @@ public class ActiveOrderController {
 
     @FXML
     private void handleRemoveItem(){
-        final MenuItem selectedItem =
-                cartList.getSelectionModel().getSelectedItem();
-        if (selectedItem == null){
+        final int selectedIndex = cartList.getSelectionModel()
+                .getSelectedIndex();
+        if (selectedIndex == -1) {
             return;
         }
-        order.removeItem(selectedItem);
-        refreshCart();
+        try {
+            order.removeItem(order.getItems().get(selectedIndex));
+            refreshCart();
+        } catch (IllegalArgumentException e) {
+
+        }
     }
 
     @FXML
@@ -138,8 +145,25 @@ public class ActiveOrderController {
     }
 
     private void refreshCart(){
-        cartList.getItems().setAll(order.getItems());
+        cartList.getItems().clear();
+        final List<MenuItem> items = order.getItems();
+        for(int i = 0; i < items.size(); i++){
+            String displayText = items.get(i).toString();
+            if(i < order.getSentItemCount()){
+                displayText = displayText + " (sent)";
+            }
+            cartList.getItems().add(displayText);
+        }
         final double total = Math.round(order.calculateTotal() * 100.0) / 100.0;
         totalLabel.setText("Total: $" + total);
+    }
+
+    private Order createOrderForUnsentItems() {
+        final Order ticketOrder = new Order(order.getOrderId(), currentServer);
+        for (int i = order.getSentItemCount();
+             i < order.getItems().size(); i++) {
+            ticketOrder.addItem(order.getItems().get(i));
+        }
+        return ticketOrder;
     }
 }
