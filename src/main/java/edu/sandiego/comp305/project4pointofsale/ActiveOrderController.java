@@ -38,14 +38,6 @@ public class ActiveOrderController {
     }
 
     @FXML
-    private void handleApplyVegan(){
-    }
-
-    @FXML
-    private void handleApplyGlutenFree(){
-    }
-
-    @FXML
     private void handleSendToKitchen(){
     }
 

@@ -33,8 +33,6 @@
             <HBox spacing="10" alignment="CENTER">
                 <Button text="Add Item" onAction="#handleAddItem" />
                 <Button text="Remove Item" onAction="#handleRemoveItem" />
-                <Button text="Apply Vegan" onAction="#handleApplyVegan" />
-                <Button text="Apply Gluten Free" onAction="#handleApplyGlutenFree" />
             </HBox>
 
             <HBox spacing="10" alignment="CENTER">
