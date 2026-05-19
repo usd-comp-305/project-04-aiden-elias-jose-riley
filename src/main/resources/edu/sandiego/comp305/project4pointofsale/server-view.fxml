@@ -10,4 +10,14 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="edu.sandiego.comp305.project4pointofsale.ServerController"
             prefWidth="600" prefHeight="400">
+    <top>
+        <Label text="Open Orders"
+               BorderPane.alignment="CENTER"/>
+    </top>
+    <center>
+
+    </center>
+    <bottom>
+
+    </bottom>
 </BorderPane>
