@@ -9,12 +9,13 @@ class POSSystemTest {
 
     @BeforeEach
     void resetIncome(){
+        POSSystem.getInstance().clearState();
         Inventory.resetIncome();
     }
 
     @Test
     void createOrderWithIds() {
-        final POSSystem pos = new POSSystem();
+        final POSSystem pos = POSSystem.getInstance();
 
         final Server elias = new Server(1, "elias", "1234");
 
@@ -26,7 +27,7 @@ class POSSystemTest {
 
     @Test
     void incrementId() {
-        final POSSystem pos = new POSSystem();
+        final POSSystem pos = POSSystem.getInstance();
 
         final Server elias = new Server(1, "elias", "1234");
 
@@ -42,7 +43,7 @@ class POSSystemTest {
 
     @Test
     void PlaceOrder() {
-        final POSSystem pos = new POSSystem();
+        final POSSystem pos = POSSystem.getInstance();
 
         final Server elias = new Server(1, "elias", "1234");
 
@@ -56,7 +57,7 @@ class POSSystemTest {
 
     @Test
     void KitchenTicketCreated() {
-        final POSSystem pos = new POSSystem();
+        final POSSystem pos = POSSystem.getInstance();
 
         final Server elias = new Server(1, "elias", "1234");
 
@@ -72,7 +73,7 @@ class POSSystemTest {
 
     @Test
     void ProfitIsAdded() {
-        final POSSystem pos = new POSSystem();
+        final POSSystem pos = POSSystem.getInstance();
 
         final Server elias = new Server(1, "elias", "1234");
 
