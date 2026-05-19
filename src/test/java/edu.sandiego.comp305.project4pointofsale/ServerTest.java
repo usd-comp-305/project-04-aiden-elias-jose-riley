@@ -9,7 +9,6 @@ class ServerTest {
 
     @BeforeEach
     void resetIncomeBeforeEachTest() {
-        POSSystem.getInstance().clearState();
         Inventory.resetIncome();
     }
 
@@ -22,7 +21,7 @@ class ServerTest {
 
     @Test
     void createOrder() {
-        final POSSystem pos = POSSystem.getInstance();
+        final POSSystem pos = new POSSystem();
         final Server server = new Server(22, "Elias", "hello");
 
         final Order order = server.createOrder(pos);
@@ -32,7 +31,7 @@ class ServerTest {
 
     @Test
     void addItemToOrder() {
-        final POSSystem pos = POSSystem.getInstance();
+        final POSSystem pos = new POSSystem();
         final Server server = new Server(22, "Elias", "hello");
 
         final Order order = server.createOrder(pos);
@@ -43,7 +42,7 @@ class ServerTest {
 
     @Test
     void submitOrder() {
-        final POSSystem pos = POSSystem.getInstance();
+        final POSSystem pos = new POSSystem();
         final Server server = new Server(22, "Elias", "hello");
 
         final Order order = server.createOrder(pos);
@@ -55,7 +54,7 @@ class ServerTest {
 
     @Test
     void calculateOrderTotal() {
-        final POSSystem pos = POSSystem.getInstance();
+        final POSSystem pos = new POSSystem();
         final Server server = new Server(22, "Elias", "hello");
 
         final Order order = server.createOrder(pos);

@@ -9,8 +9,6 @@ public class POSSystem {
 
     private static final int STARTING_TICKET_ID = 500;
 
-    private static final POSSystem INSTANCE = new POSSystem();
-
     private final List<Order> placedOrders;
 
     private final List<KitchenTicket> placedKitchenTickets;
@@ -19,22 +17,11 @@ public class POSSystem {
 
     private int nextTicketId;
 
-    private POSSystem(){
+    public POSSystem(){
         this.placedOrders = new ArrayList<>();
         this.placedKitchenTickets = new ArrayList<>();
         this.nextOrderId = STARTING_ORDER_ID;
         this.nextTicketId = STARTING_TICKET_ID;
-    }
-
-    public static POSSystem getInstance(){
-        return INSTANCE;
-    }
-
-    void clearState() {
-        placedOrders.clear();
-        placedKitchenTickets.clear();
-        nextOrderId = STARTING_ORDER_ID;
-        nextTicketId = STARTING_TICKET_ID;
     }
 
     public Order createOrder(final Server loggedServer){

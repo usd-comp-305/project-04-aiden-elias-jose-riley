@@ -29,7 +29,7 @@ public class ActiveOrderController {
 
     private Order order;
 
-    private final POSSystem posSystem = POSSystem.getInstance();
+    private final POSSystem posSystem = new POSSystem();
 
     @FXML
     private void handleBack() throws IOException{
