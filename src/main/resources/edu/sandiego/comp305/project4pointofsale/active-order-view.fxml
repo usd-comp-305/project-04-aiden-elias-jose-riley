@@ -31,7 +31,16 @@
     <bottom>
         <VBox spacing="10">
             <HBox spacing="10" alignment="CENTER">
+                <Button text="Add Item" onAction="#handleAddItem" />
+                <Button text="Remove Item" onAction="#handleRemoveItem" />
+                <Button text="Apply Vegan" onAction="#handleApplyVegan" />
+                <Button text="Apply Gluten Free" onAction="#handleApplyGlutenFree" />
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER">
                 <Button text="Back to Orders" onAction="#handleBack" />
+                <Button text="Send to Kitchen" onAction="#handleSendToKitchen" />
+                <Button text="Pay" onAction="#handlePay" />
             </HBox>
         </VBox>
     </bottom>

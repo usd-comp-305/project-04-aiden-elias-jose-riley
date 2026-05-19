@@ -28,4 +28,28 @@ public class ActiveOrderController {
         SceneManager.switchScene(stage, "server-view.fxml",
                 "Server Dashboard");
     }
+
+    @FXML
+    private void handleAddItem(){
+    }
+
+    @FXML
+    private void handleRemoveItem(){
+    }
+
+    @FXML
+    private void handleApplyVegan(){
+    }
+
+    @FXML
+    private void handleApplyGlutenFree(){
+    }
+
+    @FXML
+    private void handleSendToKitchen(){
+    }
+
+    @FXML
+    private void handlePay(){
+    }
 }
