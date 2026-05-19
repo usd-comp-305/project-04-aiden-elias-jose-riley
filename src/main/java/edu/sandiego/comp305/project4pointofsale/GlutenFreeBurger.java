@@ -18,10 +18,14 @@ public class GlutenFreeBurger extends MenuItem {
                 "and savory sauce.";
         this.cost = 13.99;
         this.ingredients = new ArrayList<>(List.of(
-                Inventory.getGlutenFreePatty(),
-                Inventory.getCheese(), Inventory.getLettuce(),
-                Inventory.getOnion(), Inventory.getCheese(),
-                Inventory.getLettuce(), Inventory.getOnion(),
-                Inventory.getTomato()));
+                IngredientRepository.getIngredient("bun"),
+                IngredientRepository.getIngredient("glutenFreePatty"),
+                IngredientRepository.getIngredient("cheese"),
+                IngredientRepository.getIngredient("lettuce"),
+                IngredientRepository.getIngredient("onion"),
+                IngredientRepository.getIngredient("cheese"),
+                IngredientRepository.getIngredient("lettuce"),
+                IngredientRepository.getIngredient("onion"),
+                IngredientRepository.getIngredient("tomato")));
     }
 }

@@ -18,6 +18,6 @@ public class VeganSteak extends MenuItem {
                 "vegan sauce.\n";
         this.cost = 49.99;
         this.ingredients = new ArrayList<>(List.of(
-                Inventory.getVeganSteak()));
+                IngredientRepository.getIngredient("veganSteak")));
     }
 }
