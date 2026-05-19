@@ -27,8 +27,9 @@ public class CashPaymentTest {
     public void calculatesCorrectChange() {
         final CashPayment payment = new CashPayment(20.00);
 
-        payment.pay(15.00);
+        final boolean result = payment.pay(15.00);
 
         assertEquals(5.00, payment.calculateChange());
+        assertTrue(result);
     }
 }
