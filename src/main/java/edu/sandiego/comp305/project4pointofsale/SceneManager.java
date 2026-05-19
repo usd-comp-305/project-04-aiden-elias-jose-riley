@@ -13,7 +13,7 @@ public class SceneManager {
 
     }
 
-    public static void switchScene(final Stage stage,
+    public static <T> T switchScene(final Stage stage,
                                    final String fxmlFile,
                                    final String title) throws IOException{
 
@@ -33,5 +33,7 @@ public class SceneManager {
 
         stage.setTitle(title);
         stage.show();
+
+        return loader.getController();
     }
 }
