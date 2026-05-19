@@ -63,4 +63,7 @@ public class Order {
             throw new IllegalArgumentException("item not in cart");
         }
     }
+
+    public void markItemsAsSent() {
+    }
 }

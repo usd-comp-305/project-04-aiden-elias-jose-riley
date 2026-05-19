@@ -116,4 +116,20 @@ class OrderTest {
         assertEquals(29.99, order.calculateTotal());
 
     }
+
+    @Test
+    void removeItemAfterMarkingAsSentThrowsException(){
+    }
+
+    @Test
+    void removeItemAddedAfterMarkAsSentWorks(){
+    }
+
+    @Test
+    void removeItemWithSentAndNonSentDuplicateRemovesNonSent(){
+    }
+
+    @Test
+    void getItemsReturnsAllItemsIncludingSent(){
+    }
 }
