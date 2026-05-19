@@ -54,6 +54,13 @@ public class ActiveOrderController {
 
     @FXML
     private void handleRemoveItem(){
+        final MenuItem selectedItem =
+                cartList.getSelectionModel().getSelectedItem();
+        if (selectedItem == null){
+            return;
+        }
+        order.removeItem(selectedItem);
+        refreshCart();
     }
 
     @FXML
