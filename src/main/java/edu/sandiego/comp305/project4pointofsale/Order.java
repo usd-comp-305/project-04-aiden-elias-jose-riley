@@ -12,6 +12,8 @@ public class Order {
 
     private final List<MenuItem> items;
 
+    private int sentCount;
+
     public Order(final Order order) {
         this.orderId = order.orderId;
         this.serverId = order.serverId;
