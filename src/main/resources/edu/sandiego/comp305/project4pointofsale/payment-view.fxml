@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="edu.sandiego.comp305.project4pointofsale.PaymentController"
+      spacing="15"
+      alignment="TOP_CENTER"
+      prefWidth="500" prefHeight="450">
+
+</VBox>
