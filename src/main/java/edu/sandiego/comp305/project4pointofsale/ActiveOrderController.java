@@ -14,10 +14,10 @@ public class ActiveOrderController {
     private BorderPane root;
 
     @FXML
-    private ListView menuList;
+    private ListView<MenuItem> menuList;
 
     @FXML
-    private ListView cartList;
+    private ListView<MenuItem> cartList;
 
     @FXML
     private Label totalLabel;
