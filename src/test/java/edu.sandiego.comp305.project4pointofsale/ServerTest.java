@@ -7,11 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ServerTest {
 
-    @BeforeEach
-    void resetIncomeBeforeEachTest() {
-        Inventory.resetIncome();
-    }
-
     @Test
     void getRole() {
         final Server server = new Server(22, "Elias", "hello");
