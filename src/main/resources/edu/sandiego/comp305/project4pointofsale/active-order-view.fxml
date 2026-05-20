@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefWidth="900" prefHeight="600"
+<BorderPane fx:id="root" prefWidth="900" prefHeight="600"
             xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="edu.sandiego.comp305.project4pointofsale.ActiveOrderController">
