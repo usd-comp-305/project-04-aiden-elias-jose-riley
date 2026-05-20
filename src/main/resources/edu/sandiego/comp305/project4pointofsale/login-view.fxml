@@ -1,21 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="15"
-      xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="edu.sandiego.comp305.project4pointofsale.LoginController">
+<BorderPane prefWidth="500" prefHeight="380"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="edu.sandiego.comp305.project4pointofsale.LoginController">
 
-    <Label text="Restaurant POS Login" />
+    <top>
+        <HBox alignment="CENTER"
+              style="-fx-background-color: #2c3e50; -fx-padding: 12 16 12 16;">
 
-    <PasswordField fx:id="pinField" promptText="Enter PIN" />
+            <Label text="🔐  Restaurant POS Login"
+                   style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+        </HBox>
+    </top>
 
-    <Button text="Login" onAction="#handleLogin" />
+    <center>
+        <VBox alignment="CENTER" spacing="16"
+              style="-fx-background-color: #ecf0f1;">
+            <padding>
+                <Insets top="30" right="60" bottom="30" left="60"/>
+            </padding>
 
-    <Label fx:id="messageLabel" text="" />
+            <Label text="Enter your PIN to sign in"
+                   style="-fx-font-size: 14px; -fx-text-fill: #2c3e50;"/>
 
-</VBox>
+            <PasswordField fx:id="pinField"
+                           promptText="Enter PIN"
+                           style="-fx-font-size: 14px; -fx-padding: 8 12 8 12;
+                                  -fx-pref-width: 300px; -fx-background-color: white;
+                                  -fx-border-color: #bdc3c7; -fx-border-radius: 4;
+                                  -fx-background-radius: 4;"/>
+
+            <Button text="Login"
+                    onAction="#handleLogin"
+                    prefWidth="170"
+                    style="-fx-background-color: #3498db; -fx-text-fill: white;
+                           -fx-font-size: 14px; -fx-font-weight: bold;
+                           -fx-cursor: hand; -fx-padding: 8 16 8 16;"/>
+
+            <Label fx:id="messageLabel" text=""
+                   style="-fx-font-size: 13px; -fx-text-fill: #e74c3c;"/>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER"
+              style="-fx-background-color: #dfe6e9; -fx-padding: 10 16 10 16;">
+            <Label text="POS System v1.0"
+                   style="-fx-font-size: 11px; -fx-text-fill: #7f8c8d;"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

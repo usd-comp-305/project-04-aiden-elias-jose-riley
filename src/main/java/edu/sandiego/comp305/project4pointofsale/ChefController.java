@@ -188,6 +188,7 @@ public class ChefController {
                 String.format("%.2f", order.calculateTotal()));
         statusLabel.setText("Status: " + ticket.getStatus());
 
+        // TODO: change to jose's overridden toString
         for (MenuItem item : order.getItems()) {
             observableItems.add(item.getDescription()
                     + "  —  $" + String.format("%.2f", item.getCost()));
@@ -288,6 +289,7 @@ public class ChefController {
         refreshTickets();
     }
 
+    //TODO: make this not go to the active order screen but the login screen
     @FXML
     private void handleBack() throws IOException {
         if (refreshTimeline != null) {
