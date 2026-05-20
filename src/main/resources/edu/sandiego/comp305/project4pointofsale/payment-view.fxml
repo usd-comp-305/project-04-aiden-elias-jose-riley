@@ -39,7 +39,8 @@
                 <Label text="Payment Method:"
                        style="-fx-font-size: 14px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;"/>
                 <ComboBox fx:id="methodCombo" prefWidth="220"
-                          style="-fx-font-size: 13px;"/>
+                          style="-fx-font-size: 13px"
+                          onAction="#handleMethodChange"/>
             </HBox>
 
             <VBox fx:id="cashPanel" spacing="6">
