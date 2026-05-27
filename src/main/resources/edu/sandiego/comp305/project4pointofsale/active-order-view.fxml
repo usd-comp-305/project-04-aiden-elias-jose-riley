@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="root" prefWidth="900" prefHeight="600"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="edu.sandiego.comp305.project4pointofsale.ActiveOrderController">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="16"
+              style="-fx-background-color: #2c3e50; -fx-padding: 12 16 12 16;">
+
+            <Label text="🍽  Active Order"
+                   style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+            <HBox HBox.hgrow="ALWAYS"/>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox spacing="0" style="-fx-background-color: #f8f9fa; -fx-pref-width: 380;">
+
+            <Label text="Menu Items"
+                   style="-fx-font-size: 15px; -fx-font-weight: bold;
+                          -fx-background-color: #dfe6e9;
+                          -fx-padding: 8 12 8 12; -fx-pref-width: infinity;"/>
+
+            <ListView fx:id="menuList"
+                      VBox.vgrow="ALWAYS"
+                      style="-fx-font-size: 13px;"/>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox spacing="0" style="-fx-background-color: #ecf0f1;">
+
+            <Label text="Cart"
+                   style="-fx-font-size: 15px; -fx-font-weight: bold;
+                          -fx-background-color: #dfe6e9;
+                          -fx-padding: 8 12 8 12; -fx-pref-width: infinity;"/>
+
+            <ListView fx:id="cartList"
+                      VBox.vgrow="ALWAYS"
+                      style="-fx-font-size: 13px;"/>
+
+            <Label fx:id="totalLabel" text="Total: $0.00"
+                   style="-fx-font-size: 15px; -fx-font-weight: bold;
+                          -fx-text-fill: #2c3e50; -fx-padding: 8 12 8 12;
+                          -fx-background-color: #dfe6e9; -fx-pref-width: infinity;"/>
+        </VBox>
+    </center>
+
+    <bottom>
+        <VBox spacing="10"
+              style="-fx-background-color: #dfe6e9; -fx-padding: 12 16 12 16;">
+
+            <HBox spacing="16" alignment="CENTER">
+                <Button text="＋  Add Item"
+                        onAction="#handleAddItem"
+                        prefWidth="190"
+                        style="-fx-background-color: #27ae60; -fx-text-fill: white;
+                               -fx-font-size: 14px; -fx-font-weight: bold;
+                               -fx-cursor: hand; -fx-padding: 8 16 8 16;"/>
+
+                <Button text="－  Remove Item"
+                        onAction="#handleRemoveItem"
+                        prefWidth="190"
+                        style="-fx-background-color: #e74c3c; -fx-text-fill: white;
+                               -fx-font-size: 14px; -fx-font-weight: bold;
+                               -fx-cursor: hand; -fx-padding: 8 16 8 16;"/>
+            </HBox>
+
+            <HBox spacing="16" alignment="CENTER">
+                <Button text="← Back"
+                        onAction="#handleBack"
+                        prefWidth="150"
+                        style="-fx-background-color: #7f8c8d; -fx-text-fill: white;
+                               -fx-font-size: 14px; -fx-font-weight: bold;
+                               -fx-cursor: hand; -fx-padding: 8 16 8 16;"/>
+
+                <Button text="🍳  Send to Kitchen"
+                        onAction="#handleSendToKitchen"
+                        prefWidth="200"
+                        style="-fx-background-color: #e67e22; -fx-text-fill: white;
+                               -fx-font-size: 14px; -fx-font-weight: bold;
+                               -fx-cursor: hand; -fx-padding: 8 16 8 16;"/>
+
+                <Button text="💳  Pay"
+                        onAction="#handlePay"
+                        prefWidth="150"
+                        style="-fx-background-color: #2980b9; -fx-text-fill: white;
+                               -fx-font-size: 14px; -fx-font-weight: bold;
+                               -fx-cursor: hand; -fx-padding: 8 16 8 16;"/>
+            </HBox>
+        </VBox>
+    </bottom>
+
+</BorderPane>
